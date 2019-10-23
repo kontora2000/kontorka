@@ -1,0 +1,2 @@
+# kontorka
+dead inside
