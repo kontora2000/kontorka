@@ -1,0 +1,65 @@
+{
+  "name": "kontorka",
+  "version": "0.0.1",
+  "description": "kontorka site",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "build": "webpack",
+    "start": "node server.js",
+    "dev-server": "nodemon server.js localhost 2000 --dev",
+    "dev-client": "webpack-dev-server --port 2999", 
+    "dev": "run-p dev-server dev-client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kontora2000/kontorka.git"
+  },
+  "author": "kontora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kontora2000/kontorka/issues"
+  },
+  "homepage": "https://github.com/kontora2000/kontorka#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.6",
+    "babel-watch": "^7.0.0",
+    "core-js": "^3.3.3",
+    "css-loader": "^3.2.0",
+    "express": "^4.17.1",
+    "g": "^2.0.1",
+    "global": "^4.4.0",
+    "multer": "^1.4.2",
+    "nodemon": "^1.19.4",
+    "npm-run-all": "^4.1.5",
+    "run-p": "0.0.0",
+    "vue": "^2.6.10",
+    "vue-cli": "^2.9.6",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.7.1",
+    "express-session": "^1.17.0",
+    "g": "^2.0.1",
+    "greensock": "^1.20.2",
+    "gsap": "^2.1.3",
+    "helmet": "^3.21.2",
+    "moongoose": "0.0.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "three": "^0.109.0",
+    "vue": "^2.6.10"
+  }
+}

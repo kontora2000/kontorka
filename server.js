@@ -1,55 +1,93 @@
-const path = require('path');
+const path=require('path');
+const session = require('express-session');
+const cookieParser=require('cookie-parser');
+const helmet = require('helmet'); //some security funcions
+//passport
+const passport=require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
+//mongo db parameters and models
+//const mongoose  = require('mongoose');
+//const uri='mongodb://localhost:27017';
+// const userModel = require('./models/user.model');
+
+// passport.use(new LocalStrategy(userModel.authenticate()));
+// passport.serializeUser(userModel.serializeUser());
+// passport.deserializeUser(userModel.deserializeUser());
+
+
+//check if app runs in dev mode (with --dev parameter)
+let devBuild = false;
+if (process.argv.indexOf('--dev')>0)
+    devBuild=true;
+
+
+//init exprees
 const express = require('express');
-const bodyParser = require('body-parser');
-const app =  express();
-const sendmail =  require('sendmail');
-// const mailer= require('express-mailer');
+const app = express();
 
-// mailer.extend(app, {
-//     from: 'no-reply@example.com',
-//     host: 'smtp.gmail.com',
-//     secureConnection: true, 
-//     port: 465, 
-//     transportMethod: 'SMTP', 
-//     auth: {
-//       user: 'gmail.user@gmail.com',
-//       pass: 'userpass'
-//     }
-//   });
+//serve static files
+app.use('/views',express.static(__dirname+"/build"));
+app.use('/build',express.static(__dirname+"/build"));
+app.use('/assets',express.static(__dirname+"/assets"));
 
 
+//routes
+const viewsFolder = __dirname+'/views/';
+app.get('/',function(req,res){
+    res.sendFile(__dirname+ '/views/index.html', (error)=>{
+        if (devBuild) {
+            if (error)
+                console.log(error);
+            else 
+                console.log('Index.html is sent from server');
+        }
+    });
+});
 
-app.use('/', express.static(__dirname));
-
-app.use('/_img',express.static(__dirname+"/_img"));
-app.use('/_js',express.static(__dirname+"/_js"));
-app.use('/_css',express.static(__dirname+"/_css"));
-app.use('/_img',express.static(__dirname+"/_img"));
-app.use(bodyParser.json());
-
-app.get('/', (req,res)=>{
-    res.sendFile('index.html');
+app.get('/auth', function(req,res) {
+    res.sendFile(__dirname+ '/views/auth.html', (error)=>{
+        if (devBuild) {
+            if (error)
+                console.log(error);
+            else 
+                console.log('Auth.html is sent from server');
+        }
+    });
 })
 
-
-
-app.post('/send', (req,res)=>{
-    res.send('asdqwer');
-    let err="";
-    if (req.xhr) {
-        sendmail({
-            from: 'no-reply@prostogaz.ru',
-            to: 'stasmyhero@gmail.com',
-            subject: 'test sendmail',
-            html: 'Mail of test sendmail',
-          }, function(err, reply) {
-            req.send(JSON.stringify(err));
-        });
+//async requests
+app.get('/vacancies',function(req,res){
+    if (devBuild){
+           console.log('Recived request to /vacansies');
     }
-    
-})
+    if (req.xhr) {   
+      res.sendFile(viewsFolder+'vacancies.html');
+    }
+    else  
+        res.sendFile(viewsFolder+'404.html');
+});
 
 
-app.listen('3000');
+app.get('/partnership',function(req,res){
+    if (devBuild){
+        console.log('Recived request to /partnership');
+    }
+    if (req.xhr) {   
+        res.sendFile(viewsFolder+'partnership.html');
+    }
+    else 
+        res.sendFile(viewsFolder+'404.html');
+}); 
+
+
+//listening port
+app.listen(2000, ()=>{
+    if (devBuild)
+        console.log("APP  started at 2000 at development mode")
+});
+
+
+
 
 
