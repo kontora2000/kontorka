@@ -10,6 +10,7 @@ new Vue({
   el: "#app",
   components:{
       marquee,
-      flag
+      flag,
+      auth
   }
 });

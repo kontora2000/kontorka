@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         tryAuth:()=>{
-            
+            console.log('qqqqq');  
         }
     }
 }
