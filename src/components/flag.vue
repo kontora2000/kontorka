@@ -6,14 +6,13 @@
 
 <script>
 
-import {animate,init} from '../three/Cloth.js';
+import {animate,init, onWindowResize} from '../three/Cloth.js';
 
 export default {
-    mounted:function(){
-        init();
-        animate();
-        window.onresize = onWindowResize();
-        
-    } 
+    mounted: function() {
+    init();
+    animate();
+    window.onresize = onWindowResize();
+  } 
 }
 </script>

@@ -8,7 +8,7 @@
     "build": "webpack",
     "start": "node server.js",
     "dev-server": "nodemon server.js localhost 2000 --dev",
-    "dev-client": "webpack-dev-server --port 2999", 
+    "dev-client": "webpack-dev-server --port 2999",
     "dev": "run-p dev-server dev-client"
   },
   "repository": {
@@ -60,6 +60,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "three": "^0.109.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-axios": "^2.1.5"
   }
 }

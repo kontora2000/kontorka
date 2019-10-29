@@ -1,20 +1,23 @@
-const path=require('path');
+const path = require('path');
+const express = require('express');
 const session = require('express-session');
-const cookieParser=require('cookie-parser');
+const favicon = require('static-favicon');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const helmet = require('helmet'); //some security funcions
 //passport
 const passport=require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+const initPassport = require('./passport/init');
 
-//mongo db parameters and models
-//const mongoose  = require('mongoose');
-//const uri='mongodb://localhost:27017';
-// const userModel = require('./models/user.model');
+//routes
+const initRoutes = require('./routes/index');
 
-// passport.use(new LocalStrategy(userModel.authenticate()));
-// passport.serializeUser(userModel.serializeUser());
-// passport.deserializeUser(userModel.deserializeUser());
+//mongoose db parameters and models
+const mongoose  = require('mongoose');
+const dbConfig = require('./db');
 
+// Connect to DB
+mongoose.connect(dbConfig.url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //check if app runs in dev mode (with --dev parameter)
 let devBuild = false;
@@ -23,7 +26,7 @@ if (process.argv.indexOf('--dev')>0)
 
 
 //init exprees
-const express = require('express');
+
 const app = express();
 
 //serve static files
@@ -31,41 +34,32 @@ app.use('/views',express.static(__dirname+"/build"));
 app.use('/build',express.static(__dirname+"/build"));
 app.use('/assets',express.static(__dirname+"/assets"));
 
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(session({ secret: 'kontoraSecretKey', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-//routes
+// init passport and routes
+initPassport(passport);
+const routes = initRoutes(passport);
+
+app.use('/', routes);
+
+
 const viewsFolder = __dirname+'/views/';
-app.get('/',function(req,res){
-    res.sendFile(__dirname+ '/views/index.html', (error)=>{
-        if (devBuild) {
-            if (error)
-                console.log(error);
-            else 
-                console.log('Index.html is sent from server');
-        }
-    });
-});
-
-app.get('/auth', function(req,res) {
-    res.sendFile(__dirname+ '/views/auth.html', (error)=>{
-        if (devBuild) {
-            if (error)
-                console.log(error);
-            else 
-                console.log('Auth.html is sent from server');
-        }
-    });
-})
 
 //async requests
 app.get('/vacancies',function(req,res){
     if (devBuild){
-           console.log('Recived request to /vacansies');
+       console.log('Recived request to /vacansies');
     }
     if (req.xhr) {   
       res.sendFile(viewsFolder+'vacancies.html');
     }
     else  
-        res.sendFile(viewsFolder+'404.html');
+      res.sendFile(viewsFolder+'404.html');
 });
 
 
