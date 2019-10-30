@@ -17,7 +17,7 @@ const mongoose  = require('mongoose');
 const dbConfig = require('./db');
 
 // Connect to DB
-mongoose.connect(dbConfig.url, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(dbConfig.url, { useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
 
 //check if app runs in dev mode (with --dev parameter)
 let devBuild = false;

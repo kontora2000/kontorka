@@ -27,7 +27,7 @@ export default {
         this.axios.post(backEndApi + '/auth', { username: login, password })
         .then((response) => {
           console.log(response);
-         // window.location = backEndApi;
+          window.location = backEndApi;
         })
         .catch((error) => {
           console.log(error);
