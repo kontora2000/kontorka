@@ -1,2 +1,2 @@
 # kontorka
-dead inside
+www.kontora.gq
