@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import userRoutes from './auth';
 import projectRoutes from './projects';
 
@@ -13,7 +14,7 @@ export default function (passport) {
 		res.redirect('/');
 	});
 	router.get('*', (req,res)=>{
-		res.status(404).send('Oops! Wrong way!');
+		res.status(404).send('Oops! Wrong way @@@@ hello world!');
 	})
 	return router;
 }

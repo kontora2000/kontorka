@@ -15,7 +15,7 @@ module.exports = {
   target: 'node',
   node: {
     __dirname: false,
-    __filename: false,  
+    __filename: false,
   },
   externals: [nodeExternals()], 
   module: {
@@ -27,5 +27,5 @@ module.exports = {
           loader: "babel-loader"
         }
       }]
-  }
+  },
 }
