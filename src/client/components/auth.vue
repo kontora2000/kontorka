@@ -18,9 +18,6 @@ export default {
             password:""
         }
     },
-    mounted:function(){
-      console.log('asdqweddqqqqqqq');
-    },
     methods: {
       tryAuth: function () {
         const { login, password } = this;
@@ -28,7 +25,7 @@ export default {
         this.axios.post(backEndApi + '/auth', { username: login, password:password })
         .then((response) => {
           console.log(response);
-          //window.location = backEndApi;
+          window.location = backEndApi;
         })
         .catch((error) => {
           console.log('an error has occured')

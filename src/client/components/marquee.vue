@@ -42,7 +42,7 @@ export default {
                          break;
             default:break      
         }
-       this.animationStart();
+  //  this.animationStart();
     },
     methods:{
         animationStart() {
