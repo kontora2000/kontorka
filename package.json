@@ -5,11 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "build": "webpack",
-    "start": "node server.js",
-    "dev-server": "nodemon server.js localhost 2000 --dev",
-    "dev-client": "webpack-dev-server --port 2999",
-    "dev": "run-p dev-server dev-client"
+    "build-client": "webpack --config  webpack.dev.config.js",
+    "build-server": "webpack  --config webpack.server.config.js --watch",
+    "build-static": "webpack --config webpack.static.config.js",
+    "dev-build": "run-p build-static build-client",
+    "start-static": "node dev-server.js",
+    "openb":"google-chrome http://localhost:8000",
+    "dev": "run-p dev-build start-static build-server openb"
   },
   "repository": {
     "type": "git",
@@ -27,11 +29,14 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.0.6",
     "babel-watch": "^7.0.0",
+    "chokidar": "^3.2.3",
     "core-js": "^3.3.3",
     "css-loader": "^3.2.0",
     "express": "^4.17.1",
     "g": "^2.0.1",
     "global": "^4.4.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "multer": "^1.4.2",
     "nodemon": "^1.19.4",
     "npm-run-all": "^4.1.5",
@@ -45,7 +50,8 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.9.0",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "axios": "^0.19.0",

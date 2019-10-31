@@ -2,7 +2,7 @@
 * Cloth Simulation using a relaxed constraints solver
 */
 
-import WEBGL from  './WebGL.js.js';
+import WEBGL from  './WebGL.js';
 
 const DAMPING = 0.06;
 const DRAG = 1 - DAMPING;
@@ -244,12 +244,10 @@ Particle.prototype.addForce = function ( force ) {
 			clothGeometry = new THREE.ParametricBufferGeometry( clothFunction, cloth.w, cloth.h);
 			// cloth mesh
 			object = new THREE.Mesh( clothGeometry, clothMaterial );
-			console.log(height);
+		
 			var posz= (1960/width)*30;
 			var ycoef = (600/height)*1.051;
-			console.log(width);
-			console.log(height);
-			console.log(posz);
+			
 			object.position.set( 10, -height*ycoef, -posz );
 			camera.position.set( 0, 0, 790 );
 			object.castShadow = false;

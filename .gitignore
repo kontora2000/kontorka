@@ -2,5 +2,7 @@ node_modules
 assets/_fonts
 assets/_img
 views/projects
+robots.txt
+v8-compile-cache-0
 .git
-v8-compile-cache
+

@@ -21,15 +21,14 @@ export default {
     methods: {
       tryAuth: function () {
         const { login, password } = this;
-        console.log(this.axios);  
-
         const creds = JSON.stringify({ login, password });
-        this.axios.post(backEndApi + '/auth', { username: login, password })
+        this.axios.post(backEndApi + '/auth', { username: login, password:password })
         .then((response) => {
           console.log(response);
           window.location = backEndApi;
         })
         .catch((error) => {
+          console.log('an error has occured')
           console.log(error);
         });
       }

@@ -12,7 +12,6 @@ router.get('/', isAuthenticated, function(req, res) {
     projects.forEach(function(project) {
       projectsMap[project._id] = project;
     });
-
     res.status(200).json({ projects : projectsMap });  
   });
 });

@@ -5,9 +5,7 @@ import VueAxios from 'vue-axios';
 
 import marquee from './components/marquee.vue'; //marques animated by greensock
 import flag from './components/flag.vue';  //template wrapper for three.js flag renderer
-import auth from './components/auth.vue';
-
-import {Stats} from  './three/stats.min.js';
+import auth from './components/auth.vue'; //auth page
 
 
 Vue.use(VueAxios, axios)
@@ -20,3 +18,6 @@ new Vue({
       auth
   }
 });
+
+module.hot.accept();
+ 

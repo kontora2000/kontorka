@@ -10,9 +10,9 @@ import {animate,init, onWindowResize} from '../three/Cloth.js';
 
 export default {
     mounted: function() {
-    init();
-    animate();
-    window.onresize = onWindowResize();
+      init();
+      animate();
+      window.onresize = onWindowResize();
   } 
 }
 </script>

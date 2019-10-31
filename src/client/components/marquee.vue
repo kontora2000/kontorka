@@ -1,6 +1,8 @@
 <template>
-    <div class="marquue">
-        <slot></slot>
+    <div class="marquee" :class="side">
+          <div class="marquee-inner" :class="mside">
+            <slot></slot>
+          </div>
     </div>
 </template>
 
@@ -11,16 +13,20 @@ export default {
     data:function(){
         return {
             timeline : null,
+            x:0,
+            y:0,
             dx:0,
             dy:0, 
-            speed:10
+            speed:10,
+            mside:''
         }
     },
     props:{
         side:String
     },
     mounted:function(){
-        this.timeline = new TimelineMax();
+        this.mside = 'm'+this.side;
+        this.timeline = new TimelineMax({repeat:-1,paused:true});
         switch (this.side) {
             case 'top': this.dx=-1*this.speed,
                          this.dy=0;
@@ -36,11 +42,15 @@ export default {
                          break;
             default:break      
         }
-        this.animate();
+  //  this.animationStart();
     },
     methods:{
-        animate() {
-
+        animationStart() {
+            this.timeline.to(this.$el, 30, {x:'+='+this.dx,y:'-=1000'});
+            this.timeline.play();
+        },
+        animationStop(){
+            this.timeline.pause();
         }
     }
 }
