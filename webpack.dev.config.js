@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
+const Dotenv = require('dotenv-webpack');
 let conf = {
   mode: 'development',
   context:__dirname+'/views/index.html',
@@ -32,6 +32,7 @@ let conf = {
     ]
   },
   plugins:[
+    new Dotenv(),
     new VueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
@@ -41,7 +42,7 @@ let conf = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
     }
-  }
+  },
 }
 
 module.exports = conf;

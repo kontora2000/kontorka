@@ -1,9 +1,9 @@
 var login = require('./login');
 var signup = require('./signup');
 var User = require('../models/user');
-
-
-
+// import login from './login';
+// import signup from './signup';
+// import User from '../models/user';
 
 module.exports = function(passport){
 
@@ -24,9 +24,6 @@ module.exports = function(passport){
 }
 
 
-// import login from './login';
-// import signup from './signup';
-// import User from '../models/user';
 
 // let initPassport =  function(passport) {
 //     passport.serializeUser(function(user, done) {

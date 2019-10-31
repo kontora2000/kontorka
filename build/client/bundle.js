@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b6e563ee3f12911e65cd";
+/******/ 	var hotCurrentHash = "c4426b3890ae74a2df01";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -784,7 +784,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/home/styleshit/Public/kontorka/build/client/";
+/******/ 	__webpack_require__.p = "/home/sergey/kontorka/build/client/";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -797,9 +797,9 @@
 /******/ ({
 
 /***/ "../../node_modules/ansi-html/index.js":
-/*!***********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/ansi-html/index.js ***!
-  \***********************************************************************/
+/*!*************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/ansi-html/index.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1009,10 +1009,26 @@ ansiHTML.reset();
 
 /***/ }),
 
+/***/ "../../node_modules/ansi-regex/index.js":
+/*!**************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/ansi-regex/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><]/g;
+};
+
+/***/ }),
+
 /***/ "../../node_modules/axios/index.js":
-/*!*******************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/index.js ***!
-  \*******************************************************************/
+/*!*********************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/index.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1021,9 +1037,9 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "../../node_modules/axio
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/adapters/xhr.js":
-/*!******************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/adapters/xhr.js ***!
-  \******************************************************************************/
+/*!********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/adapters/xhr.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1200,9 +1216,9 @@ module.exports = function xhrAdapter(config) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/axios.js":
-/*!***********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/axios.js ***!
-  \***********************************************************************/
+/*!*************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/axios.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1262,9 +1278,9 @@ module.exports.default = axios;
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/cancel/Cancel.js":
-/*!*******************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/cancel/Cancel.js ***!
-  \*******************************************************************************/
+/*!*********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/cancel/Cancel.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1291,9 +1307,9 @@ module.exports = Cancel;
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/cancel/CancelToken.js":
-/*!************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/cancel/CancelToken.js ***!
-  \************************************************************************************/
+/*!**************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/cancel/CancelToken.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1361,9 +1377,9 @@ module.exports = CancelToken;
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/cancel/isCancel.js":
-/*!*********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/cancel/isCancel.js ***!
-  \*********************************************************************************/
+/*!***********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/cancel/isCancel.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1377,9 +1393,9 @@ module.exports = function isCancel(value) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/Axios.js":
-/*!****************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/Axios.js ***!
-  \****************************************************************************/
+/*!******************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/Axios.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1475,9 +1491,9 @@ module.exports = Axios;
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/InterceptorManager.js":
-/*!*****************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/InterceptorManager.js ***!
-  \*****************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/InterceptorManager.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1541,9 +1557,9 @@ module.exports = InterceptorManager;
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/createError.js":
-/*!**********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/createError.js ***!
-  \**********************************************************************************/
+/*!************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/createError.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1571,9 +1587,9 @@ module.exports = function createError(message, config, code, request, response) 
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/dispatchRequest.js":
-/*!**************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/dispatchRequest.js ***!
-  \**************************************************************************************/
+/*!****************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/dispatchRequest.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1647,9 +1663,9 @@ module.exports = function dispatchRequest(config) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/enhanceError.js":
-/*!***********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/enhanceError.js ***!
-  \***********************************************************************************/
+/*!*************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/enhanceError.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1702,9 +1718,9 @@ module.exports = function enhanceError(error, config, code, request, response) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/mergeConfig.js":
-/*!**********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/mergeConfig.js ***!
-  \**********************************************************************************/
+/*!************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/mergeConfig.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1755,9 +1771,9 @@ module.exports = function mergeConfig(config1, config2) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/settle.js":
-/*!*****************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/settle.js ***!
-  \*****************************************************************************/
+/*!*******************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/settle.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1787,9 +1803,9 @@ module.exports = function settle(resolve, reject, response) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/core/transformData.js":
-/*!************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/core/transformData.js ***!
-  \************************************************************************************/
+/*!**************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/core/transformData.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1818,9 +1834,9 @@ module.exports = function transformData(data, headers, fns) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/defaults.js":
-/*!**************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/defaults.js ***!
-  \**************************************************************************/
+/*!****************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/defaults.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1923,9 +1939,9 @@ module.exports = defaults;
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/bind.js":
-/*!******************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/bind.js ***!
-  \******************************************************************************/
+/*!********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/bind.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1947,9 +1963,9 @@ module.exports = function bind(fn, thisArg) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/buildURL.js":
-/*!**********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/buildURL.js ***!
-  \**********************************************************************************/
+/*!************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/buildURL.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2024,9 +2040,9 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/combineURLs.js":
-/*!*************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/combineURLs.js ***!
-  \*************************************************************************************/
+/*!***************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/combineURLs.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2047,9 +2063,9 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/cookies.js":
-/*!*********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/cookies.js ***!
-  \*********************************************************************************/
+/*!***********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/cookies.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2105,9 +2121,9 @@ function nonStandardBrowserEnv() {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/isAbsoluteURL.js":
-/*!***************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
-  \***************************************************************************************/
+/*!*****************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2130,9 +2146,9 @@ module.exports = function isAbsoluteURL(url) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/isURLSameOrigin.js":
-/*!*****************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
-  \*****************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2199,9 +2215,9 @@ function nonStandardBrowserEnv() {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/normalizeHeaderName.js":
-/*!*********************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
-  \*********************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2222,9 +2238,9 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/parseHeaders.js":
-/*!**************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/parseHeaders.js ***!
-  \**************************************************************************************/
+/*!****************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2283,9 +2299,9 @@ module.exports = function parseHeaders(headers) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/helpers/spread.js":
-/*!********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/helpers/spread.js ***!
-  \********************************************************************************/
+/*!**********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/helpers/spread.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2321,9 +2337,9 @@ module.exports = function spread(callback) {
 /***/ }),
 
 /***/ "../../node_modules/axios/lib/utils.js":
-/*!***********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/axios/lib/utils.js ***!
-  \***********************************************************************/
+/*!*************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/axios/lib/utils.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2691,9 +2707,9 @@ module.exports = {
 /***/ }),
 
 /***/ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../src/client/components/auth.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/babel-loader/lib!/home/styleshit/Public/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/styleshit/Public/kontorka/src/client/components/auth.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/babel-loader/lib!/home/sergey/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/sergey/kontorka/src/client/components/auth.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2709,30 +2725,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
-const backEndApi = 'http://localhost:2000';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function () {
     return {
-      login: "",
-      password: ""
+      username: "",
+      password: "",
+      token: ''
     };
   },
   methods: {
     tryAuth: function () {
       const {
-        login,
-        password
+        username,
+        password,
+        token
       } = this;
-      const creds = JSON.stringify({
-        login,
+      console.log("http://localhost:2002" + '/auth');
+      const backEndApi = "http://localhost:2002" + '/auth';
+      this.axios.post(backEndApi, {
+        username,
         password
-      });
-      this.axios.post(backEndApi + '/auth', {
-        username: login,
-        password: password
+      }, {
+        headers: {
+          Authorization: 'Bearer ' + token
+        }
       }).then(response => {
+        const {
+          token
+        } = response.data.user;
         console.log(response);
-        window.location = backEndApi;
+        this.token = token;
+        console.log(this.token);
+        this.axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+        console.log(this.axios.defaults.headers);
+        localStorage.setItem('token', `Bearer ${token}`);
+        window.location = 'http://localhost:8000';
       }).catch(error => {
         console.log('an error has occured');
         console.log(error);
@@ -2744,9 +2771,9 @@ const backEndApi = 'http://localhost:2000';
 /***/ }),
 
 /***/ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../src/client/components/flag.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/babel-loader/lib!/home/styleshit/Public/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/styleshit/Public/kontorka/src/client/components/flag.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/babel-loader/lib!/home/sergey/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/sergey/kontorka/src/client/components/flag.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2765,15 +2792,26 @@ __webpack_require__.r(__webpack_exports__);
     Object(_three_Cloth_js__WEBPACK_IMPORTED_MODULE_0__["init"])();
     Object(_three_Cloth_js__WEBPACK_IMPORTED_MODULE_0__["animate"])();
     window.onresize = Object(_three_Cloth_js__WEBPACK_IMPORTED_MODULE_0__["onWindowResize"])();
+  },
+  created: function () {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      this.axios.get("http://localhost:2002" + '/auth', {
+        headers: {
+          Authorization: token
+        }
+      }).then(r => console.log(r)).catch(e => console.log(e));
+    }
   }
 });
 
 /***/ }),
 
 /***/ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../src/client/components/marquee.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/babel-loader/lib!/home/styleshit/Public/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/styleshit/Public/kontorka/src/client/components/marquee.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/babel-loader/lib!/home/sergey/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/sergey/kontorka/src/client/components/marquee.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2855,9 +2893,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "../../node_modules/gsap/AttrPlugin.js":
-/*!***********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/AttrPlugin.js ***!
-  \***********************************************************************/
+/*!*************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/AttrPlugin.js ***!
+  \*************************************************************/
 /*! exports provided: AttrPlugin, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2912,9 +2950,9 @@ var AttrPlugin = _TweenLite_js__WEBPACK_IMPORTED_MODULE_0__["_gsScope"]._gsDefin
 /***/ }),
 
 /***/ "../../node_modules/gsap/BezierPlugin.js":
-/*!*************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/BezierPlugin.js ***!
-  \*************************************************************************/
+/*!***************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/BezierPlugin.js ***!
+  \***************************************************************/
 /*! exports provided: BezierPlugin, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3721,9 +3759,9 @@ p._kill = function (lookup) {
 /***/ }),
 
 /***/ "../../node_modules/gsap/CSSPlugin.js":
-/*!**********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/CSSPlugin.js ***!
-  \**********************************************************************/
+/*!************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/CSSPlugin.js ***!
+  \************************************************************/
 /*! exports provided: CSSPlugin, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7518,9 +7556,9 @@ var CSSPlugin = _TweenLite_js__WEBPACK_IMPORTED_MODULE_0__["globals"].CSSPlugin;
 /***/ }),
 
 /***/ "../../node_modules/gsap/DirectionalRotationPlugin.js":
-/*!**************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/DirectionalRotationPlugin.js ***!
-  \**************************************************************************************/
+/*!****************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/DirectionalRotationPlugin.js ***!
+  \****************************************************************************/
 /*! exports provided: DirectionalRotationPlugin, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7634,9 +7672,9 @@ DirectionalRotationPlugin._autoCSS = true;
 /***/ }),
 
 /***/ "../../node_modules/gsap/EasePack.js":
-/*!*********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/EasePack.js ***!
-  \*********************************************************************/
+/*!***********************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/EasePack.js ***!
+  \***********************************************************/
 /*! exports provided: Back, Elastic, Bounce, RoughEase, SlowMo, SteppedEase, Circ, Expo, Sine, ExpoScaleEase, Linear, Power0, Power1, Power2, Power3, Power4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8062,9 +8100,9 @@ var ExpoScaleEase = _TweenLite_js__WEBPACK_IMPORTED_MODULE_0__["globals"].ExpoSc
 /***/ }),
 
 /***/ "../../node_modules/gsap/RoundPropsPlugin.js":
-/*!*****************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/RoundPropsPlugin.js ***!
-  \*****************************************************************************/
+/*!*******************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/RoundPropsPlugin.js ***!
+  \*******************************************************************/
 /*! exports provided: RoundPropsPlugin, _getRoundFunc, _roundLinkedList, p, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8195,9 +8233,9 @@ p._add = function (target, p, s, c, mod) {
 /***/ }),
 
 /***/ "../../node_modules/gsap/TimelineLite.js":
-/*!*************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/TimelineLite.js ***!
-  \*************************************************************************/
+/*!***************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/TimelineLite.js ***!
+  \***************************************************************/
 /*! exports provided: TimelineLite, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9265,9 +9303,9 @@ var TimelineLite = _TweenLite_js__WEBPACK_IMPORTED_MODULE_0__["globals"].Timelin
 /***/ }),
 
 /***/ "../../node_modules/gsap/TimelineMax.js":
-/*!************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/TimelineMax.js ***!
-  \************************************************************************/
+/*!**************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/TimelineMax.js ***!
+  \**************************************************************/
 /*! exports provided: TimelineMax, TimelineLite, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9923,9 +9961,9 @@ var TimelineMax = _TweenLite_js__WEBPACK_IMPORTED_MODULE_0__["globals"].Timeline
 /***/ }),
 
 /***/ "../../node_modules/gsap/TweenLite.js":
-/*!**********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/TweenLite.js ***!
-  \**********************************************************************/
+/*!************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/TweenLite.js ***!
+  \************************************************************/
 /*! exports provided: _gsScope, TweenLite, globals, default, SimpleTimeline, Animation, Ease, Linear, Power0, Power1, Power2, Power3, Power4, TweenPlugin, EventDispatcher */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12484,9 +12522,9 @@ var EventDispatcher = nonGlobals.events.EventDispatcher;
 /***/ }),
 
 /***/ "../../node_modules/gsap/TweenMax.js":
-/*!*********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/TweenMax.js ***!
-  \*********************************************************************/
+/*!***********************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/TweenMax.js ***!
+  \***********************************************************/
 /*! exports provided: TweenMax, default, TweenLite, TimelineLite, TimelineMax, CSSPlugin, AttrPlugin, BezierPlugin, DirectionalRotationPlugin, RoundPropsPlugin, TweenPlugin, Ease, Power0, Power1, Power2, Power3, Power4, Linear, Back, Elastic, Bounce, RoughEase, SlowMo, SteppedEase, Circ, Expo, Sine, ExpoScaleEase */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12588,9 +12626,9 @@ TweenMax._autoActivated = [_TimelineLite_js__WEBPACK_IMPORTED_MODULE_6__["defaul
 /***/ }),
 
 /***/ "../../node_modules/gsap/TweenMaxBase.js":
-/*!*************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/gsap/TweenMaxBase.js ***!
-  \*************************************************************************/
+/*!***************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/gsap/TweenMaxBase.js ***!
+  \***************************************************************/
 /*! exports provided: TweenMax, TweenMaxBase, default, TweenLite, Ease, Power0, Power1, Power2, Power3, Power4, Linear */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13464,9 +13502,9 @@ var TweenMaxBase = TweenMax;
 /***/ }),
 
 /***/ "../../node_modules/html-entities/index.js":
-/*!***************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/html-entities/index.js ***!
-  \***************************************************************************/
+/*!*****************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/html-entities/index.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13480,9 +13518,9 @@ module.exports = {
 /***/ }),
 
 /***/ "../../node_modules/html-entities/lib/html4-entities.js":
-/*!****************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/html-entities/lib/html4-entities.js ***!
-  \****************************************************************************************/
+/*!******************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/html-entities/lib/html4-entities.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -13659,9 +13697,9 @@ module.exports = Html4Entities;
 /***/ }),
 
 /***/ "../../node_modules/html-entities/lib/html5-entities.js":
-/*!****************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/html-entities/lib/html5-entities.js ***!
-  \****************************************************************************************/
+/*!******************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/html-entities/lib/html5-entities.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -13892,9 +13930,9 @@ module.exports = Html5Entities;
 /***/ }),
 
 /***/ "../../node_modules/html-entities/lib/xml-entities.js":
-/*!**************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/html-entities/lib/xml-entities.js ***!
-  \**************************************************************************************/
+/*!****************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/html-entities/lib/xml-entities.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -14076,9 +14114,9 @@ module.exports = XmlEntities;
 /***/ }),
 
 /***/ "../../node_modules/is-buffer/index.js":
-/*!***********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/is-buffer/index.js ***!
-  \***********************************************************************/
+/*!*************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/is-buffer/index.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -14095,9 +14133,9 @@ module.exports = function isBuffer(obj) {
 /***/ }),
 
 /***/ "../../node_modules/process/browser.js":
-/*!***********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/process/browser.js ***!
-  \***********************************************************************/
+/*!*************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/process/browser.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -14313,9 +14351,9 @@ process.umask = function () {
 /***/ }),
 
 /***/ "../../node_modules/querystring-es3/decode.js":
-/*!******************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/querystring-es3/decode.js ***!
-  \******************************************************************************/
+/*!********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/querystring-es3/decode.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14409,9 +14447,9 @@ var isArray = Array.isArray || function (xs) {
 /***/ }),
 
 /***/ "../../node_modules/querystring-es3/encode.js":
-/*!******************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/querystring-es3/encode.js ***!
-  \******************************************************************************/
+/*!********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/querystring-es3/encode.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14508,9 +14546,9 @@ var objectKeys = Object.keys || function (obj) {
 /***/ }),
 
 /***/ "../../node_modules/querystring-es3/index.js":
-/*!*****************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/querystring-es3/index.js ***!
-  \*****************************************************************************/
+/*!*******************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/querystring-es3/index.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14523,9 +14561,9 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "../../
 /***/ }),
 
 /***/ "../../node_modules/setimmediate/setImmediate.js":
-/*!*********************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/setimmediate/setImmediate.js ***!
-  \*********************************************************************************/
+/*!***********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/setimmediate/setImmediate.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14734,10 +14772,28 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "../../
 
 /***/ }),
 
+/***/ "../../node_modules/strip-ansi/index.js":
+/*!**************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/strip-ansi/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var ansiRegex = __webpack_require__(/*! ansi-regex */ "../../node_modules/ansi-regex/index.js")();
+
+module.exports = function (str) {
+  return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
+};
+
+/***/ }),
+
 /***/ "../../node_modules/timers-browserify/main.js":
-/*!******************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/timers-browserify/main.js ***!
-  \******************************************************************************/
+/*!********************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/timers-browserify/main.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14804,9 +14860,9 @@ exports.clearImmediate = typeof self !== "undefined" && self.clearImmediate || t
 /***/ }),
 
 /***/ "../../node_modules/vue-axios/dist/vue-axios.min.js":
-/*!************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/vue-axios/dist/vue-axios.min.js ***!
-  \************************************************************************************/
+/*!**************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/vue-axios/dist/vue-axios.min.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14847,9 +14903,9 @@ var _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator 
 /***/ }),
 
 /***/ "../../node_modules/vue-hot-reload-api/dist/index.js":
-/*!*************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/vue-hot-reload-api/dist/index.js ***!
-  \*************************************************************************************/
+/*!***************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/vue-hot-reload-api/dist/index.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15152,9 +15208,9 @@ function patchScopedSlots(instance) {
 /***/ }),
 
 /***/ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!../../src/client/components/auth.vue?vue&type=template&id=4cc76f56&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/home/styleshit/Public/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/styleshit/Public/kontorka/src/client/components/auth.vue?vue&type=template&id=4cc76f56& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/home/sergey/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/sergey/kontorka/src/client/components/auth.vue?vue&type=template&id=4cc76f56& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15175,18 +15231,18 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.login,
-            expression: "login"
+            value: _vm.username,
+            expression: "username"
           }
         ],
-        attrs: { type: "text", name: "login" },
-        domProps: { value: _vm.login },
+        attrs: { type: "text", name: "username" },
+        domProps: { value: _vm.username },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.login = $event.target.value
+            _vm.username = $event.target.value
           }
         }
       }),
@@ -15236,9 +15292,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!../../src/client/components/flag.vue?vue&type=template&id=579b0f1a&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/home/styleshit/Public/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/styleshit/Public/kontorka/src/client/components/flag.vue?vue&type=template&id=579b0f1a& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/home/sergey/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/sergey/kontorka/src/client/components/flag.vue?vue&type=template&id=579b0f1a& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15280,9 +15336,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!../../src/client/components/marquee.vue?vue&type=template&id=649c3238&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/home/styleshit/Public/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/styleshit/Public/kontorka/src/client/components/marquee.vue?vue&type=template&id=649c3238& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/home/sergey/kontorka/node_modules/vue-loader/lib??vue-loader-options!/home/sergey/kontorka/src/client/components/marquee.vue?vue&type=template&id=649c3238& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15311,9 +15367,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ "../../node_modules/vue-loader/lib/runtime/componentNormalizer.js":
-/*!**************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \**************************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15418,9 +15474,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ "../../node_modules/vue/dist/vue.esm.js":
-/*!************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/node_modules/vue/dist/vue.esm.js ***!
-  \************************************************************************/
+/*!**************************************************************!*\
+  !*** /home/sergey/kontorka/node_modules/vue/dist/vue.esm.js ***!
+  \**************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27548,7 +27604,7 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(/*! strip-ansi */ "../../node_modules/webpack-hot-middleware/node_modules/strip-ansi/index.js");
+  var strip = __webpack_require__(/*! strip-ansi */ "../../node_modules/strip-ansi/index.js");
 
   var overlay;
 
@@ -27695,40 +27751,6 @@ if (module) {
   };
 }
 /* WEBPACK VAR INJECTION */}.call(this, "?path=/__webpack_hmr&timeout=20000", __webpack_require__(/*! ./../webpack/buildin/module.js */ "../../node_modules/webpack/buildin/module.js")(module)))
-
-/***/ }),
-
-/***/ "../../node_modules/webpack-hot-middleware/node_modules/ansi-regex/index.js":
-/*!*****************************************************************!*\
-  !*** (webpack)-hot-middleware/node_modules/ansi-regex/index.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function () {
-  return /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><]/g;
-};
-
-/***/ }),
-
-/***/ "../../node_modules/webpack-hot-middleware/node_modules/strip-ansi/index.js":
-/*!*****************************************************************!*\
-  !*** (webpack)-hot-middleware/node_modules/strip-ansi/index.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var ansiRegex = __webpack_require__(/*! ansi-regex */ "../../node_modules/webpack-hot-middleware/node_modules/ansi-regex/index.js")();
-
-module.exports = function (str) {
-  return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
-};
 
 /***/ }),
 
@@ -27982,9 +28004,9 @@ module.exports = function (module) {
 /***/ }),
 
 /***/ "../../src/client/client.js":
-/*!************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/client.js ***!
-  \************************************************************/
+/*!**************************************************!*\
+  !*** /home/sergey/kontorka/src/client/client.js ***!
+  \**************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28021,9 +28043,9 @@ module.hot.accept();
 /***/ }),
 
 /***/ "../../src/client/components/auth.vue":
-/*!**********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/auth.vue ***!
-  \**********************************************************************/
+/*!************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/auth.vue ***!
+  \************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28052,7 +28074,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (true) {
-  var api = __webpack_require__(/*! /home/styleshit/Public/kontorka/node_modules/vue-hot-reload-api/dist/index.js */ "../../node_modules/vue-hot-reload-api/dist/index.js")
+  var api = __webpack_require__(/*! /home/sergey/kontorka/node_modules/vue-hot-reload-api/dist/index.js */ "../../node_modules/vue-hot-reload-api/dist/index.js")
   api.install(__webpack_require__(/*! vue */ "../../node_modules/vue/dist/vue.esm.js"))
   if (api.compatible) {
     module.hot.accept()
@@ -28076,9 +28098,9 @@ component.options.__file = "src/client/components/auth.vue"
 /***/ }),
 
 /***/ "../../src/client/components/auth.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/auth.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/auth.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28090,9 +28112,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "../../src/client/components/auth.vue?vue&type=template&id=4cc76f56&":
-/*!*****************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/auth.vue?vue&type=template&id=4cc76f56& ***!
-  \*****************************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/auth.vue?vue&type=template&id=4cc76f56& ***!
+  \*******************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28108,9 +28130,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "../../src/client/components/flag.vue":
-/*!**********************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/flag.vue ***!
-  \**********************************************************************/
+/*!************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/flag.vue ***!
+  \************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28139,7 +28161,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (true) {
-  var api = __webpack_require__(/*! /home/styleshit/Public/kontorka/node_modules/vue-hot-reload-api/dist/index.js */ "../../node_modules/vue-hot-reload-api/dist/index.js")
+  var api = __webpack_require__(/*! /home/sergey/kontorka/node_modules/vue-hot-reload-api/dist/index.js */ "../../node_modules/vue-hot-reload-api/dist/index.js")
   api.install(__webpack_require__(/*! vue */ "../../node_modules/vue/dist/vue.esm.js"))
   if (api.compatible) {
     module.hot.accept()
@@ -28163,9 +28185,9 @@ component.options.__file = "src/client/components/flag.vue"
 /***/ }),
 
 /***/ "../../src/client/components/flag.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/flag.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/flag.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28177,9 +28199,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "../../src/client/components/flag.vue?vue&type=template&id=579b0f1a&":
-/*!*****************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/flag.vue?vue&type=template&id=579b0f1a& ***!
-  \*****************************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/flag.vue?vue&type=template&id=579b0f1a& ***!
+  \*******************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28195,9 +28217,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "../../src/client/components/marquee.vue":
-/*!*************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/marquee.vue ***!
-  \*************************************************************************/
+/*!***************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/marquee.vue ***!
+  \***************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28226,7 +28248,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (true) {
-  var api = __webpack_require__(/*! /home/styleshit/Public/kontorka/node_modules/vue-hot-reload-api/dist/index.js */ "../../node_modules/vue-hot-reload-api/dist/index.js")
+  var api = __webpack_require__(/*! /home/sergey/kontorka/node_modules/vue-hot-reload-api/dist/index.js */ "../../node_modules/vue-hot-reload-api/dist/index.js")
   api.install(__webpack_require__(/*! vue */ "../../node_modules/vue/dist/vue.esm.js"))
   if (api.compatible) {
     module.hot.accept()
@@ -28250,9 +28272,9 @@ component.options.__file = "src/client/components/marquee.vue"
 /***/ }),
 
 /***/ "../../src/client/components/marquee.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/marquee.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/marquee.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28264,9 +28286,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "../../src/client/components/marquee.vue?vue&type=template&id=649c3238&":
-/*!********************************************************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/components/marquee.vue?vue&type=template&id=649c3238& ***!
-  \********************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** /home/sergey/kontorka/src/client/components/marquee.vue?vue&type=template&id=649c3238& ***!
+  \**********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28282,9 +28304,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "../../src/client/three/Cloth.js":
-/*!*****************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/three/Cloth.js ***!
-  \*****************************************************************/
+/*!*******************************************************!*\
+  !*** /home/sergey/kontorka/src/client/three/Cloth.js ***!
+  \*******************************************************/
 /*! exports provided: animate, onWindowResize, init */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28576,9 +28598,9 @@ function animate() {
 /***/ }),
 
 /***/ "../../src/client/three/WebGL.js":
-/*!*****************************************************************!*\
-  !*** /home/styleshit/Public/kontorka/src/client/three/WebGL.js ***!
-  \*****************************************************************/
+/*!*******************************************************!*\
+  !*** /home/sergey/kontorka/src/client/three/WebGL.js ***!
+  \*******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28649,14 +28671,14 @@ var WEBGL = {
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************************************************************!*\
-  !*** multi webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000 /home/styleshit/Public/kontorka/src/client/client.js ***!
-  \**********************************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** multi webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000 /home/sergey/kontorka/src/client/client.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000 */"../../node_modules/webpack-hot-middleware/client.js?path=/__webpack_hmr&timeout=20000");
-module.exports = __webpack_require__(/*! /home/styleshit/Public/kontorka/src/client/client.js */"../../src/client/client.js");
+module.exports = __webpack_require__(/*! /home/sergey/kontorka/src/client/client.js */"../../src/client/client.js");
 
 
 /***/ })
