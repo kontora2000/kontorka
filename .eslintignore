@@ -1,4 +1,5 @@
 webpack/*
+webpack.dev.config.js
 build/*
 src/client/three/*
 dev-server.js

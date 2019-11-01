@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "build-client": "webpack --config  webpack/webpack.dev.config.js",
+    "build-client": "webpack --config  webpack.dev.config.js",
     "build-server": "webpack  --config webpack/webpack.server.config.js --watch",
     "build-static": "webpack --config webpack/webpack.static.config.js",
     "dev-build": "run-p build-static build-client",
