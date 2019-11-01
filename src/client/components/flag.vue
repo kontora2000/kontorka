@@ -13,6 +13,19 @@ export default {
       init();
       animate();
       window.onresize = onWindowResize();
+  },
+  created: function() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.axios.get(process.env.BACKEND_API + '/projects',
+      {
+        headers: {
+          Authorization: token,
+        } 
+      })
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
+    }
   } 
 }
 </script>

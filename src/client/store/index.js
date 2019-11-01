@@ -1,38 +1,44 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
+
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    todos: null,
+    user: null,
+    projects: null
   },
 
   getters: {
-    TODOS: state => {
-      return state.todos;
+    USER: state => {
+      return state.user;
     },
   },
 
   mutations: {
-    SET_TODO: (state, payload) => {
+    SET_PROJECTS: (state, payload) => {
       state.todos = payload;
     },
 
-    ADD_TODO: (state, payload) => {
-      state.todos.push(payload);
+    ADD_USER: (state, payload) => {
+      state.user = payload;
     },
   },
 
   actions: {
-    GET_TODO: async (context, payload) => {
-      let {data} = await Axios.get('http://yourwebsite.com/api/todo');
-      context.commit('SET_TODO', data);
+    GET_PROJECTS: async function (context, payload) {
+      let {data} = await axios.get(process.env.BACKEND_API + '/projects');
+      context.commit('SET_PROJECTS', data);
     },
 
-    SAVE_TODO: async (context, payload) => {
-      let {data} = await Axios.post('http://yourwebsite.com/api/todo');
-      context.commit('ADD_TODO', payload);
+    SAVE_USER: async function (context, {username, password}) {
+      const { data: { user } } = await axios.post(
+        process.env.BACKEND_API + '/auth',
+        { username, password }
+        );
+      context.commit('ADD_USER', user);
     },
   },
 });

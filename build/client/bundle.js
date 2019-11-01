@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "1daac2c1be433e4dc860";
+/******/ 	var hotCurrentHash = "79cac7fcf63b92c610a5";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2715,8 +2715,7 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "../../node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "../../node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -2725,33 +2724,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
-const backEndApi = 'http://localhost:2000';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function () {
     return {
-      login: "",
-      password: ""
+      username: "",
+      password: "",
+      token: ''
     };
+  },
+  computed: { ...Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['USER']) // Другие вычисляемые свойства
+
   },
   methods: {
     tryAuth: function () {
       const {
-        login,
-        password
+        username,
+        password,
+        token
       } = this;
-      const creds = JSON.stringify({
-        login,
+      console.log("http://localhost:2002" + '/auth'); //const backEndApi = process.env.BACKEND_API + '/auth';
+
+      this.$store.dispatch('SAVE_USER', {
+        username,
         password
-      });
-      this.axios.post(backEndApi + '/auth', {
-        username: login,
-        password: password
-      }).then(response => {
-        console.log(response);
-        window.location = backEndApi;
-      }).catch(error => {
-        console.log('an error has occured');
-        console.log(error);
       });
     }
   }
@@ -2781,6 +2776,17 @@ __webpack_require__.r(__webpack_exports__);
     Object(_three_Cloth_js__WEBPACK_IMPORTED_MODULE_0__["init"])();
     Object(_three_Cloth_js__WEBPACK_IMPORTED_MODULE_0__["animate"])();
     window.onresize = Object(_three_Cloth_js__WEBPACK_IMPORTED_MODULE_0__["onWindowResize"])();
+  },
+  created: function () {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      this.axios.get("http://localhost:2002" + '/projects', {
+        headers: {
+          Authorization: token
+        }
+      }).then(r => console.log(r)).catch(e => console.log(e));
+    }
   }
 });
 
@@ -15209,18 +15215,18 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.login,
-            expression: "login"
+            value: _vm.username,
+            expression: "username"
           }
         ],
-        attrs: { type: "text", name: "login" },
-        domProps: { value: _vm.login },
+        attrs: { type: "text", name: "username" },
+        domProps: { value: _vm.username },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.login = $event.target.value
+            _vm.username = $event.target.value
           }
         }
       }),
@@ -29099,16 +29105,10 @@ module.exports = function (module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "../../node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "../../node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-axios */ "../../node_modules/vue-axios/dist/vue-axios.min.js");
-/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "../../src/client/store/index.js");
-/* harmony import */ var _components_marquee_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/marquee.vue */ "../../src/client/components/marquee.vue");
-/* harmony import */ var _components_flag_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/flag.vue */ "../../src/client/components/flag.vue");
-/* harmony import */ var _components_auth_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/auth.vue */ "../../src/client/components/auth.vue");
-
-
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store */ "../../src/client/store/index.js");
+/* harmony import */ var _components_marquee_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/marquee.vue */ "../../src/client/components/marquee.vue");
+/* harmony import */ var _components_flag_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/flag.vue */ "../../src/client/components/flag.vue");
+/* harmony import */ var _components_auth_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/auth.vue */ "../../src/client/components/auth.vue");
 
 
  //marques animated by greensock
@@ -29117,14 +29117,13 @@ __webpack_require__.r(__webpack_exports__);
 
  //auth page
 
-vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_axios__WEBPACK_IMPORTED_MODULE_2___default.a, axios__WEBPACK_IMPORTED_MODULE_1___default.a);
 new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  store: _store__WEBPACK_IMPORTED_MODULE_3__["store"],
+  store: _store__WEBPACK_IMPORTED_MODULE_1__["store"],
   el: "#app",
   components: {
-    marquee: _components_marquee_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    flag: _components_flag_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    auth: _components_auth_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    marquee: _components_marquee_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    flag: _components_flag_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    auth: _components_auth_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 module.hot.accept();
@@ -29404,38 +29403,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "store", function() { return store; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "../../node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "../../node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "../../node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-axios */ "../../node_modules/vue-axios/dist/vue-axios.min.js");
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_axios__WEBPACK_IMPORTED_MODULE_3__);
 
 
+
+
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_axios__WEBPACK_IMPORTED_MODULE_3___default.a, axios__WEBPACK_IMPORTED_MODULE_2___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 const store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    todos: null
+    user: null,
+    projects: null
   },
   getters: {
-    TODOS: state => {
-      return state.todos;
+    USER: state => {
+      return state.user;
     }
   },
   mutations: {
-    SET_TODO: (state, payload) => {
+    SET_PROJECTS: (state, payload) => {
       state.todos = payload;
     },
-    ADD_TODO: (state, payload) => {
-      state.todos.push(payload);
+    ADD_USER: (state, payload) => {
+      state.user = payload;
     }
   },
   actions: {
-    GET_TODO: async (context, payload) => {
+    GET_PROJECTS: async function (context, payload) {
       let {
         data
-      } = await Axios.get('http://yourwebsite.com/api/todo');
-      context.commit('SET_TODO', data);
+      } = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://yourwebsite.com/api/todo');
+      context.commit('SET_PROJECTS', data);
     },
-    SAVE_TODO: async (context, payload) => {
-      let {
-        data
-      } = await Axios.post('http://yourwebsite.com/api/todo');
-      context.commit('ADD_TODO', payload);
+    SAVE_USER: async function (context, {
+      username,
+      password
+    }) {
+      const {
+        data: {
+          user
+        }
+      } = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:2002" + '/auth', {
+        username,
+        password
+      });
+      context.commit('ADD_USER', user);
     }
   }
 });

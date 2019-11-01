@@ -1,37 +1,29 @@
 <template>
     <form method="post" enctype="multipart/form-data">
-        <input type="text" name="login" v-model="login" >
+        <input type="text" name="username" v-model="username" >
         <input type="password" name="password" v-model="password">
         <button name="submit" @click.prevent="tryAuth">Отправить</button>
     </form>
 </template>
 <script>
-import {axios} from "axios";
-
-const backEndApi = 'http://localhost:2000';
+import {mapGetters} from 'vuex';
 
 export default {
-    data:function()
-    { 
-        return {
-            login:"",
-            password:""
-        }
-    },
-    methods: {
-      tryAuth: function () {
-        const { login, password } = this;
-        const creds = JSON.stringify({ login, password });
-        this.axios.post(backEndApi + '/auth', { username: login, password:password })
-        .then((response) => {
-          console.log(response);
-          window.location = backEndApi;
-        })
-        .catch((error) => {
-          console.log('an error has occured')
-          console.log(error);
-        });
-      }
+  data: function () {
+    return {
+      username : '',
+      password : '',
+      token: '',
     }
+  },
+  computed : {
+  ...mapGetters(['USER']),
+  },
+  methods: {
+    tryAuth: function () {
+      const { username, password, token } = this;
+      this.$store.dispatch('SAVE_USER', { username, password });
+    }
+  }
 }
 </script>
