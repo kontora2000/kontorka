@@ -16,7 +16,7 @@ router.get('/', isAuthenticated, function(req, res) {
   });
 });
 
-router.post('/',  function (req, res) {
+router.post('/', isAuthenticated, function (req, res) {
   const newProject = new Project();
   // set the user's local credentials
   newProject.title = req.body.title;

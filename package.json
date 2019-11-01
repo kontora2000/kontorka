@@ -10,7 +10,7 @@
     "build-static": "webpack --config webpack.static.config.js",
     "dev-build": "run-p build-static build-client",
     "start-static": "node dev-server.js",
-    "openb":"google-chrome http://localhost:8000",
+    "openb": "google-chrome http://localhost:8000",
     "dev": "run-p dev-build start-static build-server openb"
   },
   "repository": {
@@ -45,6 +45,7 @@
     "vue-cli": "^2.9.6",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.1.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.2",
