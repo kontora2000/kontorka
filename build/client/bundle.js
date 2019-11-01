@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "33ebef2686858fff2da4";
+/******/ 	var hotCurrentHash = "fabc92dc79510ee398e8";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2852,9 +2852,8 @@ __webpack_require__.r(__webpack_exports__);
 
       default:
         break;
-    }
+    } // this.animationStart();
 
-    this.animationStart();
   },
   methods: {
     animationStart() {
