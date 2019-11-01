@@ -1,9 +1,9 @@
 <template>
-    <div class="marquee" :class="side">
-          <div class="marquee-inner" :class="mside">
-            <slot></slot>
-          </div>
+  <div class="marquee" :class="side">
+    <div class="marquee-inner" :class="mside">
+      <slot></slot>
     </div>
+  </div>
 </template>
 
 <script>
