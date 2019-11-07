@@ -5,33 +5,32 @@
  </div>
 </template>
 <script>
-import {axios} from "axios";
-import {mapGetters} from 'vuex';
+import { axios } from 'axios';
+import { mapGetters } from 'vuex';
 
-import project from "./project";
+import project from './project';
 
 export default {
   components: {
     project,
   },
-  computed : {
-  ...mapGetters(['projects']),
-  // Другие вычисляемые свойства
+  computed: {
+    ...mapGetters(['projects']),
   },
-  created: function() {
+  created() {
     const token = localStorage.getItem('token');
     if (token) {
-      axios.get(process.env.BACKEND_API + '/projects',
-      {
-        headers: {
-          Authorization: token,
-        } 
-      })
-      .then((r) => console.log(r))
-      .catch((e) => console.log(e));
+      axios.get(`${process.env.BACKEND_API}/projects`,
+        {
+          headers: {
+            Authorization: token,
+          }, 
+        })
+        .then((r) => console.log(r))
+        .catch((e) => console.log(e));
     }
-  } 
-}
+  }, 
+};
 </script>
 
 <style lang="scss" scoped>

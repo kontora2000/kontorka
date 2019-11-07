@@ -1,10 +1,10 @@
 import express from 'express';
 
-const router = express.Router();
+// eslint-disable-next-line prefer-const
+let router = express.Router();
 
-export default function (passport) {
-/* Handle Auth methods */
-
+export default function initPassport(passport) {
+  /* Handle Auth methods */
   router.post('/', (req, res, next) => {
     passport.authenticate('login', (err, user, info) => {
       if (err) { return next(err); }
@@ -20,6 +20,5 @@ export default function (passport) {
       });
     })(req, res, next);
   });
-
   return router;
 }

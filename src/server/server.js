@@ -41,11 +41,11 @@ app.use(session({ secret: 'kontoraSecretKey', resave: false, saveUninitialized: 
 app.use(passport.initialize());
 app.use(passport.session());
 initPassport(passport);
-
+ 
 const routes = initRoutes(passport);
 
 app.use('/', routes);
-
+  
 // listening port
 const http = require('http');
 

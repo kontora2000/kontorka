@@ -1,8 +1,6 @@
-// import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
-const jwt = require('jsonwebtoken');
-
-module.exports = (req, res, next) => {
+export default function (req, res, next) {
   // if user is authenticated in the session, call the next() to call the next request handler 
   // Passport adds this method to request object. A middleware is allowed to add properties to
   // request and response objects
@@ -16,8 +14,8 @@ module.exports = (req, res, next) => {
       if (err) {
         return res.json({
           success: false,
-          message: 'Token is not valid',
-        });
+          message: 'Token is not!  valid',
+        }); 
       } else {
         req.decoded = decoded;
         next();
@@ -30,4 +28,4 @@ module.exports = (req, res, next) => {
       message: 'Authorization token is not supplied',
     });
   }
-};
+}

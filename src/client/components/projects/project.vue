@@ -4,20 +4,19 @@
  </div>
 </template>
 <script>
-import {axios} from "axios";
 
 export default {
-  data: function () {
+  data() {
     return {
-      username : "",
-      password : "",
+      username: '',
+      password: '',
       token: '',
-    }
+    };
   },
-  created: function() {
+  created() {
     console.log('this is project page');
-  } 
-}
+  }, 
+};
 </script>
 
 <style lang="scss" scoped>
