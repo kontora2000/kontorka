@@ -6,6 +6,7 @@
 </template>
 <script>
 import {axios} from "axios";
+import {mapGetters} from 'vuex';
 
 import project from "./project";
 
@@ -20,7 +21,7 @@ export default {
   created: function() {
     const token = localStorage.getItem('token');
     if (token) {
-      this.axios.get(process.env.BACKEND_API + '/projects',
+      axios.get(process.env.BACKEND_API + '/projects',
       {
         headers: {
           Authorization: token,
