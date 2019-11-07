@@ -14,12 +14,14 @@ export const store = new Vuex.Store({
   },
 
   getters: {
-    USER: (state) => state.user,
+    user: (state) => state.user,
+    projects: (state) => state.projects,
   },
 
   mutations: {
     SET_PROJECTS: (state, payload) => {
-      state.projects = payload;
+      console.log('mutations', payload);
+      state.projects = payload.projects;
     },
 
     ADD_USER: (state, payload) => {

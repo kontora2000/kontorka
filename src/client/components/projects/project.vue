@@ -1,6 +1,7 @@
 <template>
  <div class='project'>
-  project page
+  child asdasdsd
+  <img :src="project.path" />
  </div>
 </template>
 <script>
@@ -13,8 +14,14 @@ export default {
       token: '',
     };
   },
-  created() {
-    console.log('this is project page');
+  props: {  
+    project: {
+      type: Object,
+
+    },
+  },
+  mounted() {
+    console.log(this.project, 'child page');
   }, 
 };
 </script>

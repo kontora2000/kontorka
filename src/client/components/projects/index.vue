@@ -1,34 +1,29 @@
 <template>
- <div class='projects'>
-    projects page
-    <project />
+ <div class='projects'> 
+    <div v-for="project in projects">
+      <project :project="project" />
+    </div>
+  <!--<project v-for="project in projects"></project> -->
+   
  </div>
 </template>
 <script>
-import { axios } from 'axios';
 import { mapGetters } from 'vuex';
 
+// eslint-disable-next-line import/no-unresolved
 import project from './project';
 
 export default {
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     project,
   },
   computed: {
     ...mapGetters(['projects']),
   },
-  created() {
-    const token = localStorage.getItem('token');
-    if (token) {
-      axios.get(`${process.env.BACKEND_API}/projects`,
-        {
-          headers: {
-            Authorization: token,
-          }, 
-        })
-        .then((r) => console.log(r))
-        .catch((e) => console.log(e));
-    }
+  mounted() {
+    this.$store.dispatch('GET_PROJECTS');
+    console.log(this.projects, 'this is projects page');
   }, 
 };
 </script>

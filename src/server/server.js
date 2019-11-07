@@ -1,5 +1,5 @@
-// import path from 'path';
 import express from 'express';
+
 import cors from 'cors';
 import dotenv from 'dotenv';
 // server
@@ -45,11 +45,13 @@ initPassport(passport);
 const routes = initRoutes(passport);
 
 app.use('/', routes);
+
   
 // listening port
 const http = require('http');
 
 const server = http.createServer(app);
 server.listen(2002, () => {
+  // eslint-disable-next-line no-console
   if (devBuild) { console.log('Backend started at 2002 at development mode!!!!'); }
 }); 
