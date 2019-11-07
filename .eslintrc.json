@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "plugin:vue/recommended", //подключение vue-linter'а
+        "airbnb-base" //подключение airbnb
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+//parser options
+    "parserOptions": {
+        "parser":"babel-eslint",
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "vue",
+        "autofix"
+    ],
+    "rules": {
+        "autofix/no-debugger": "error",
+        "comma-dangle": ["error", { //висящие запятые для объектов
+            "arrays": "never",
+            "objects": "always",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never"
+        }],
+        "indent": ["error", 2],
+        "no-else-return"   : 0, //позволить else после return
+        "no-trailing-spaces":0, //позволить всиящие пробелы
+        "consistent-return":0, //позволить функциям не возвращать значения
+        "no-underscore-dangle":0, //разрешить нижний слэш в имени переменных
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": true, "peerDependencies": true}]
+    }
+}

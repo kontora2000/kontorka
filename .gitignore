@@ -4,5 +4,6 @@ assets/_img
 views/projects
 robots.txt
 v8-compile-cache-0
+build
 .git
 .env
