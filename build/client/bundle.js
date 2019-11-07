@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fabc92dc79510ee398e8";
+/******/ 	var hotCurrentHash = "e4dbd21834173699b6f5";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2807,16 +2807,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function () {
     return {
       timeline: null,
-      x: 0,
-      y: 0,
+      startX: 0,
+      startY: 0,
       dx: 0,
       dy: 0,
-      speed: 10,
+      speed: 1000,
       mside: ''
     };
   },
@@ -2832,34 +2835,35 @@ __webpack_require__.r(__webpack_exports__);
 
     switch (this.side) {
       case 'top':
-        this.dx = -1 * this.speed, this.dy = 0;
+        this.dx = `-=${this.speed}`, this.dy = 0;
         break;
 
       case 'bottom':
-        this.dx = this.speed;
+        this.dx = `+=${this.speed}`;
         this.dy = 0;
         break;
 
       case 'left':
         this.dy = -1 * this.speed;
-        this.dx = 0;
+        this.dy = `-=${this.speed}`;
         break;
 
       case 'right':
-        this.dy = this.speed;
         this.dx = 0;
+        this.dy = `+=${this.speed}`;
         break;
 
       default:
         break;
-    } // this.animationStart();
+    }
 
+    this.animationStart();
   },
   methods: {
     animationStart() {
       this.timeline.to(this.$el, 30, {
-        x: '+=' + this.dx,
-        y: '-=1000'
+        x: this.dx,
+        y: this.dy
       });
       this.timeline.play();
     },
@@ -15317,7 +15321,11 @@ var render = function() {
     _c(
       "div",
       { staticClass: "marquee-inner", class: _vm.mside },
-      [_vm._t("default")],
+      [
+        _vm._l(80, function(i) {
+          return [_vm._t("default")]
+        })
+      ],
       2
     )
   ])

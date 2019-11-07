@@ -33,23 +33,27 @@ export default {
         switch (this.side) {
             case 'top': this.dx=`-=${this.speed}`,
                          this.dy=0;
+                         this.startX = `${0}`;
                          break;
             case 'bottom': this.dx=`+=${this.speed}`;
                          this.dy=0;
+                         this.startX = `-${screen.width}/2`;
                          break;
             case 'left': this.dy=-1*this.speed;
                          this.dy=`-=${this.speed}`;
+                         this.startY = `${screen.height}`;
                          break;
             case 'right':this.dx=0;
                          this.dy=`+=${this.speed}`;
+                         this.startY = `-${screen.height}`;
                          break;
             default:break      
         }
-  // this.animationStart();
+  this.animationStart();
     },
     methods:{
         animationStart() {
-            this.timeline.to(this.$el, 30, {x:this.dx,y:this.dy});
+            this.timeline.fromTo(this.$el.querySelector('.marquee-inner'), 30, {x:this.startX, y:this.startY},{x:this.dx,y:this.dy});
             this.timeline.play();
         },
         animationStop(){
