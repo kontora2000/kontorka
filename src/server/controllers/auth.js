@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
   // if user is authenticated in the session, call the next() to call the next request handler 
@@ -14,8 +14,8 @@ module.exports = (req, res, next) => {
       if (err) {
         return res.json({
           success: false,
-          message: 'Token is not valid',
-        });
+          message: 'Token is not!  valid',
+        }); 
       } else {
         req.decoded = decoded;
         next();
