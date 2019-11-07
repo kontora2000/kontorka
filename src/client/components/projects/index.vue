@@ -1,0 +1,40 @@
+<template>
+ <div class='projects'>
+    projects page
+    <project />
+ </div>
+</template>
+<script>
+import {axios} from "axios";
+
+import project from "./project";
+
+export default {
+  components: {
+    project,
+  },
+  computed : {
+  ...mapGetters(['projects']),
+  // Другие вычисляемые свойства
+  },
+  created: function() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.axios.get(process.env.BACKEND_API + '/projects',
+      {
+        headers: {
+          Authorization: token,
+        } 
+      })
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
+    }
+  } 
+}
+</script>
+
+<style lang="scss" scoped>
+  .projects {
+    margin: 20px;
+  }
+</style>
