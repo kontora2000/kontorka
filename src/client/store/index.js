@@ -11,6 +11,7 @@ export const store = new Vuex.Store({
   state: {
     user: null,
     projects: null,
+    project: null,
   },
 
   getters: {
@@ -20,13 +21,17 @@ export const store = new Vuex.Store({
 
   mutations: {
     SET_PROJECTS: (state, payload) => {
-      console.log('mutations', payload);
       state.projects = payload.projects;
     },
 
     ADD_USER: (state, payload) => {
       state.user = payload;
     },
+
+    ADD_PROJECT: (state, payload) => {
+      state.projects = [payload, ...state.projects];
+    },
+ 
   },
 
   actions: {
@@ -42,6 +47,15 @@ export const store = new Vuex.Store({
         { username, password, }
       );
       context.commit('ADD_USER', user);
+    },
+
+    async SAVE_PROJECT(context, projectData) {
+      const { data: { project, }, } = await axios.post(
+        `${process.env.BACKEND_API}/projects`,
+        projectData
+      );
+      context.commit('ADD_PROJECT', project);
+      // context.dispatch('GET_PROJECTS');
     },
   },
 });

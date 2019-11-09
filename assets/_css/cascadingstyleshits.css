@@ -289,15 +289,7 @@ header,
 	display: grid;
 }
 
-.projects {
-	grid-template-columns: repeat(3, calc(100vw/3));
-	grid-template-rows: minmax(80vh, auto);
-	grid-auto-flow: row dense;
-	grid-column-gap: 0;
-	grid-row-gap: 10vh;
-	overflow-x: hidden;
-	transition: background 1s ease;
-}
+
 @media (max-width: 500px) { 
 	.projects {
 		grid-template-columns: 100vw;

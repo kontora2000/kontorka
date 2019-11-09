@@ -89,6 +89,7 @@
     "static-favicon": "^2.0.0-alpha",
     "three": "^0.109.0",
     "vue": "^2.6.10",
-    "vue-axios": "^2.1.5"
+    "vue-axios": "^2.1.5",
+    "vuex-persistedstate": "^2.7.0"
   }
 }
