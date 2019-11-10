@@ -10,6 +10,7 @@ import auth from './components/auth.vue'; // auth page
 import root from './components/root.vue';
 
 Vue.use(VueRouter, axios);
+ 
 // eslint-disable-next-line no-unused-vars
 const app = new Vue({
   store,

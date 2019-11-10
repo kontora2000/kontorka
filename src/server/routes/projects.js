@@ -1,35 +1,36 @@
 import express from 'express';
-import multer from 'multer';
+// import multer from 'multer';
 
+// eslint-disable-next-line no-unused-vars
 import isAuthenticated from '../controllers/auth';
 import Project from '../models/project';
 
 const router = express.Router();
 
-const storage = multer.diskStorage({
-  destination(req, file, cb) {
-    cb(null, './uploads/');
-  },
-  filename(req, file, cb) {
-    let filename = '';
-    switch (file.mimetype) {
-    case 'image/png':
-      filename = `${file.fieldname}-${Date.now()}.png`;
-      break;
-    case 'image/jpeg':
-      filename += '.jpeg';
-      filename = `${file.fieldname}-${Date.now()}.jpeg`;
-      break;
-    default:
-      break;
-    }
+// const storage = multer.diskStorage({
+//   destination(req, file, cb) {
+//     cb(null, './uploads/');
+//   },
+//   filename(req, file, cb) {
+//     let filename = '';
+//     switch (file.mimetype) {
+//     case 'image/png':
+//       filename = `${file.fieldname}-${Date.now()}.png`;
+//       break;
+//     case 'image/jpeg':
+//       filename += '.jpeg';
+//       filename = `${file.fieldname}-${Date.now()}.jpeg`;
+//       break;
+//     default:
+//       break;
+//     }
 
-    cb(null, filename);
-  },
-});
+//     cb(null, filename);
+//   },
+// });
 
 
-const upload = multer({ storage, });
+// const upload = multer({ storage, });
 
 router.get('/', (req, res) => {
   Project.find({}, (err, projects) => {
@@ -43,8 +44,8 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/', upload.single('image'), (req, res) => {
-  const newProject = new Project({ ...req.body, ...req.file, });   
+router.post('/', /* isAuthenticated , */ (req, res) => {
+  const newProject = new Project(req.body);   
   // save the user
   newProject.save((err) => {
     if (err) { 
@@ -54,7 +55,7 @@ router.post('/', upload.single('image'), (req, res) => {
   });
 });
 
-router.put('/:id', isAuthenticated, (req, res) => {
+router.put('/:id', /* isAuthenticated , */ (req, res) => {
   Project.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -63,7 +64,7 @@ router.put('/:id', isAuthenticated, (req, res) => {
   );
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', /* isAuthenticated , */ (req, res) => {
   Project.findByIdAndRemove(
     req.params.id,
     (err, delProject) => res.status(200).json({ project: delProject, })

@@ -32,7 +32,7 @@
       </marquee>
       <marquee side="right">
         <div class="multiply multiply-right">
-            <a class="link-instagram marquee-link" href="https://instagram.com/prostokontora"><span>instagram</span></a>
+          <a class="link-instagram marquee-link" href="https://instagram.com/prostokontora"><span>instagram</span></a>
         </div>
       </marquee>
       <marquee side="bottom">

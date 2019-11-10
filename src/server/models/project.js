@@ -8,5 +8,10 @@ const ProjectSchema = new Schema({
   size: String,
   url: String,
   path: String,
+  hashTags: [{
+    type: String,
+  }],
+}, {
+  timestamps: true,
 });
 module.exports = mongoose.model('project', ProjectSchema);
