@@ -21,6 +21,7 @@ const UserSchema = new Schema({
   },
 });
 
+// eslint-disable-next-line func-names
 UserSchema.pre('save', function (next) {
   // Hash the password before saving the user model
   if (this.isModified('password')) {
@@ -29,10 +30,12 @@ UserSchema.pre('save', function (next) {
   next();
 });
 
+// eslint-disable-next-line func-names
 UserSchema.methods.validatePassword = function (password) {
   return bCrypt.compareSync(password, this.password);
 };
 
+// eslint-disable-next-line func-names
 UserSchema.methods.generateJWT = function () {
   const token = jwt.sign({
     username: this.username,
@@ -47,4 +50,4 @@ UserSchema.methods.generateJWT = function () {
   return token;
 };
 
-module.exports = mongoose.model('user', UserSchema);
+export default mongoose.model('user', UserSchema);

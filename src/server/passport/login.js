@@ -1,8 +1,9 @@
-const LocalStrategy = require('passport-local').Strategy;
-const User = require('../models/user');
+import passportLocal from 'passport-local';
+import User from '../models/user';
 
+const LocalStrategy = passportLocal.Strategy;
 
-module.exports = function (passport) {
+export default function (passport) {
   passport.use('login', new LocalStrategy({
     passReqToCallback: true,
   },
@@ -17,4 +18,4 @@ module.exports = function (passport) {
         return done(null, user);
       }).catch(done);
   }))); 
-};
+}

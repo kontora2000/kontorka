@@ -6,13 +6,14 @@
 
 <script>
 
-import {animate,init, onWindowResize} from '../three/Cloth.js';
+// eslint-disable-next-line import/extensions
+import { animate, init, onWindowResize } from '../three/Cloth.js';
 
 export default {
-    mounted: function() {
-      init();
-      animate();
-      window.onresize = onWindowResize();
+  mounted() {
+    init();
+    animate();
+    window.onresize = onWindowResize();
   },
-}
+};
 </script>

@@ -12,6 +12,7 @@ function initWebpackHMR(app) {
     logLevel: 'warn', 
     publicPath: webpackConfig.output.publicPath,
   }));
+  // eslint-disable-next-line no-console
   app.use(webpackHotMiddleware(compiler, { log: console.log, }));
 }
 export default {
