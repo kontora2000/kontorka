@@ -1,6 +1,6 @@
 <template>
  <div class='projects'> 
-    <div v-for="project in projects">
+    <div v-for="project in filteredProjects">
       <project :project="project"  @openForm="handleFormShow" />
     </div>
     <img v-if="!formIsShown" class="projects-add"
@@ -25,6 +25,9 @@ export default {
   },
   computed: {
     ...mapGetters(['projects', 'newProject']),
+    filteredProjects() {
+      return this.projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    },
   },
   data() {
     return {

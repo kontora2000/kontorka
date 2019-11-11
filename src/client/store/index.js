@@ -10,10 +10,8 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     user: null,
-    projects: null,
-    activeProject: {
-      title: '', size: '', content: '', url: '', 
-    },
+    projects: [],
+    activeProject: null,
     undoProject: null,
     newProject: null,
   },
@@ -29,7 +27,6 @@ export const store = new Vuex.Store({
   mutations: {
     SET_PROJECTS: (state, payload) => {
       state.projects = payload.projects;
-      state.projects = state.projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     },
 
     ADD_USER: (state, user) => {
@@ -46,7 +43,6 @@ export const store = new Vuex.Store({
       const newProjects = state.projects.filter((p) => p._id !== _id);
      
       state.projects = [...newProjects, { ...state.undoProject, }];
-      state.projects = state.projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     },
     SET_NEW_PROJECT: (state, payload) => {
       state.newProject = payload;
@@ -54,12 +50,10 @@ export const store = new Vuex.Store({
 
     ADD_PROJECT: (state, project) => {
       state.projects = [project, ...state.projects];
-      state.projects = state.projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     },
     UPDATE_PROJECT: (state, project) => {
       const newProjects = state.projects.filter((p) => p._id !== project._id);
       state.projects = [...newProjects, project];
-      state.projects = state.projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     },
   },
 
