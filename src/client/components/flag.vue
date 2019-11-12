@@ -1,5 +1,5 @@
 <template>
-  <div class="flag" style="z-index: 106">
+  <div class="flag">
     <canvas id="canvas" style="width:100%;height:100%;background:transparent;"></canvas>
   </div>
 </template>

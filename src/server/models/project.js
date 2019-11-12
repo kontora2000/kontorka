@@ -8,6 +8,10 @@ const ProjectSchema = new Schema({
   size: String,
   url: String,
   path: String,
+  isRemoveable: {
+    type: Boolean,
+    default: false,
+  },
   hashTags: [{
     type: String,
   }],

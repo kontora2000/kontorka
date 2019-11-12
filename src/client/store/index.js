@@ -5,15 +5,25 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 
+import createPersistedState from 'vuex-persistedstate';
+import SecureLS from 'secure-ls';
+
+const ls = new SecureLS({ isCompression: false, });
+
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
     user: null,
     projects: [],
-    activeProject: null,
+    activeProject: {
+      title: '', size: '', content: '', url: '', hashTags: [],
+    },
     undoProject: null,
-    newProject: null,
+    newProject: {
+      title: '', size: '', content: '', url: '', hashTags: [],
+    },
+    openAdminForm: false,
   },
 
   getters: {
@@ -22,19 +32,22 @@ export const store = new Vuex.Store({
     activeProject: (state) => state.activeProject,
     undoProject: (state) => state.undoProject,
     newProject: (state) => state.newProject,
+    openAdminForm: (state) => state.openAdminForm,
   },
 
   mutations: {
+    HANDLE_ADMIN_FORM: (state, payload) => {
+      state.openAdminForm = payload;
+    },
     SET_PROJECTS: (state, payload) => {
       state.projects = payload.projects;
     },
-
     ADD_USER: (state, user) => {
       state.user = user;
     },
-    SET_ACTIVE_PROJECT: (state, project) => {
-      const curProject = state.projects.find((p) => p._id === project._id);
-      const activeProject = curProject || project;
+    SET_ACTIVE_PROJECT: (state, _id) => {
+      const curProject = state.projects.find((p) => p._id === _id);
+      const activeProject = curProject || state.newProject;
      
       state.undoProject = { ...activeProject, };
       state.activeProject = activeProject;
@@ -52,6 +65,10 @@ export const store = new Vuex.Store({
       state.projects = [project, ...state.projects];
     },
     UPDATE_PROJECT: (state, project) => {
+      const newProjects = state.projects.filter((p) => p._id !== project._id);
+      state.projects = [...newProjects, project];
+    },
+    REMOVE_PROJECT: (state, project) => {
       const newProjects = state.projects.filter((p) => p._id !== project._id);
       state.projects = [...newProjects, project];
     },
@@ -78,6 +95,9 @@ export const store = new Vuex.Store({
         projectData
       );
       context.commit('ADD_PROJECT', project);
+      context.commit('SET_NEW_PROJECT', {
+        title: '', size: '', content: '', url: '', hashTags: [],
+      });
       // context.dispatch('GET_PROJECTS');
     },
 
@@ -90,5 +110,23 @@ export const store = new Vuex.Store({
       context.commit('UPDATE_PROJECT', project);
       // context.dispatch('GET_PROJECTS');
     },
+    async REMOVE_PROJECT(context, { _id, isRemoveable, }) {
+      const { data: { project, }, } = await axios.patch(
+        `${process.env.BACKEND_API}/projects/${_id}`,
+        { isRemoveable, }
+      );
+  
+      context.commit('REMOVE_PROJECT', project);
+      // context.dispatch('GET_PROJECTS');
+    },
   },
+  plugins: [
+    createPersistedState({
+      storage: {
+        getItem: (key) => ls.get(key),
+        setItem: (key, value) => ls.set(key, value),
+        removeItem: (key) => ls.remove(key),
+      },
+    })
+  ],
 });

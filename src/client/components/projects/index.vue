@@ -1,12 +1,11 @@
 <template>
  <div class='projects'> 
-    <div v-for="project in filteredProjects">
-      <project :project="project"  @openForm="handleFormShow" />
+    <div v-for="(project, key) in filteredProjects" :key="key" >
+      <project :project="project" />
     </div>
-    <img v-if="!formIsShown" class="projects-add"
+    <img v-if="!openAdminForm" class="projects-add"
      src='/assets/_img/button-plus.png'
      alt="#" @click='handleProject' />
-    <formEl :formIsShown="formIsShown" :formIsAdd="formIsAdd" @closeForm="handleFormShow" />
  </div>
 </template>
 <script>
@@ -24,37 +23,19 @@ export default {
     project,
   },
   computed: {
-    ...mapGetters(['projects', 'newProject']),
+    ...mapGetters(['projects', 'newProject', 'openAdminForm']),
     filteredProjects() {
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
       return this.projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     },
-  },
-  data() {
-    return {
-      formIsShown: false,
-      formIsAdd: false,
-    };
   },
   mounted() {
     this.$store.dispatch('GET_PROJECTS');
   },
   methods: {
-    handleFormShow(e) {
-      this.formIsShown = e.openForm;
-      this.formIsAdd = e.formIsAdd;
-    },
     handleProject() {
-      this.formIsShown = true;
-      this.formIsAdd = true;
-
-      if (this.newProject) {
-        this.$store.commit('SET_ACTIVE_PROJECT', this.newProject);
-      } else {
-        this.$store.commit('SET_NEW_PROJECT', {
-          title: '', size: '', content: '', url: '', hashTags: [],
-        });
-        this.$store.commit('SET_ACTIVE_PROJECT', this.newProject);
-      }
+      this.$store.commit('SET_ACTIVE_PROJECT', this.newProject);
+      this.$store.commit('HANDLE_ADMIN_FORM', true);
     },
   },
 };

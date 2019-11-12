@@ -5,7 +5,7 @@
           <flag></flag>
         <div class="we-do">
           We design identities&thinsp;/&thinsp;websites&thinsp;/&thinsp;apps&thinsp;/&thinsp;ad
-           &&nbsp;content for&nbsp;social networks🔥
+           &nbsp;content for&nbsp;social networks🔥
         </div>
         <div class="about-kontora">
           Independent design bureau <br>based in&nbsp;Novorossiysk.
@@ -55,7 +55,8 @@
       </marquee>
     </header>
     <main>
-       <projects></projects>
+      <projects />
+      <mov-form />
     </main>
      <!-- <footer>
   
@@ -73,15 +74,43 @@
 <script>
 // eslint-disable-next-line import/no-unresolved
 import projects from './projects';
+import MovForm from './MovForm/index.vue';
 import marquee from './marquee.vue'; // marques animated by greensock
 import flag from './flag.vue';
 // template wrapper for three.js flag renderer
- 
+
 export default {
+  name: 'root',
   components: {
-    flag,
-    marquee,
+    MovForm,
     projects,
+    marquee,
+    flag,
   },
 };
 </script>
+<style lang="scss">
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #333;
+  letter-spacing: 1px;
+  background: #f5f5f5;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+main {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+</style>

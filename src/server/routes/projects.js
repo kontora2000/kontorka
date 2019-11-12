@@ -33,13 +33,8 @@ const router = express.Router();
 // const upload = multer({ storage, });
 
 router.get('/', (req, res) => {
+  Project.deleteMany({ isRemoveable: true, }, () => {});
   Project.find({}, (err, projects) => {
-    const projectsMap = {};
-
-    projects.forEach((project) => {
-      projectsMap[project._id] = project;
-    });
-
     res.status(200).json({ projects, });  
   });
 });
@@ -56,6 +51,16 @@ router.post('/', /* isAuthenticated , */ (req, res) => {
 });
 
 router.put('/:id', /* isAuthenticated , */ (req, res) => {
+  Project.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true, },
+    (err, newProject) => res.status(200).json({ project: newProject, })
+  );
+});
+
+router.patch('/:id', /* isAuthenticated , */ (req, res) => {
+  console.log('patch !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
   Project.findByIdAndUpdate(
     req.params.id,
     req.body,
