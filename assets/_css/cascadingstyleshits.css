@@ -48,10 +48,9 @@ html {
 }
 
 body {
-	background-color: #000;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 @media (max-width: 740px) {
@@ -91,7 +90,8 @@ a:hover {
 
 
 article {
-    display: grid;
+		display: grid;
+		background-color: #000;
 }
 
 h1, h2, h3, h4, h5 {
@@ -169,7 +169,7 @@ header {
 		background-size: 100vw;
 		margin-left: 0;
 		margin-top: 7%;
-		overflow: hidden;
+		overflow-x: hidden;
 		/* transform: rotate(80deg); */
 		width: 100vw;
 	}
