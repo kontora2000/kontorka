@@ -37,9 +37,8 @@
 	color: #ff0;
 }
 
-
 html {
-  color: var(--BlackColor);
+	color: var(--BlackColor);
 	font-family: var(--fontFamily);
 	font-size: 1em;
 	line-height: 1.5em;
@@ -49,10 +48,10 @@ html {
 }
 
 body {
-	/* background-color: #000; */
+	background-color: #000;
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 @media (max-width: 740px) {
@@ -60,7 +59,6 @@ body {
 		overflow: auto;
 	}
 }
-
 /*
 body::-webkit-scrollbar {
 		width: .4em;
@@ -151,8 +149,7 @@ i {
 
 header {
 	min-height: 100vh;
-	background: var(--BlackColor);
-	margin: 0;
+	margin: 0 0 4rem;
 	width: 100%;
 }
 
