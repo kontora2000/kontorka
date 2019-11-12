@@ -54,6 +54,7 @@ body {
 	padding: 0;
 	overflow-x: hidden;
 }
+
 @media (max-width: 740px) {
 	body {
 		overflow: auto;
@@ -108,9 +109,6 @@ h1 .quotes-margin {
 	margin-left: -4.75rem;
 }
 
-h1 .line-through {
-
-}
 
 h1 a {
 	border-bottom-width: 1.25rem !important;
@@ -165,8 +163,9 @@ header {
 	grid-row: 1/4;
 	height: 64vh;
 	width: inherit;
-	z-index: 106;
+	z-index: 1;
 }
+
 @media (max-width: 500px) {
 	.flag {
 		background-position: 0 0;
@@ -188,7 +187,7 @@ header {
 	line-height: 3.75rem;
 	margin: -5rem 1rem 0 4rem;
 	mix-blend-mode: difference;
-	z-index: 106;
+	z-index: 1;
 }
 @media (max-width: 740px) {
 	.we-do {
@@ -239,7 +238,7 @@ header {
 	grid-row: 3/5;
 	margin: -4.25rem 4rem 0 2rem;
 	mix-blend-mode: difference;
-	z-index: 106;
+	z-index: 1;
 }
 @media (max-width: 740px) {
 	.about-kontora {
@@ -289,7 +288,6 @@ header,
 	display: grid;
 }
 
-
 @media (max-width: 500px) { 
 	.projects {
 		grid-template-columns: 100vw;
@@ -298,7 +296,6 @@ header,
 	}
 }
 
-.project {  }
 @media (max-width: 500px) { 
 	.project {
 		max-width: inherit;

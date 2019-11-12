@@ -1,5 +1,5 @@
-<template>
-  <form v-if="formIsShown" class="form" method="post" >
+<template>  
+  <form class="form" method="post" >
     <fieldset id="size">
       <label>
         Medium
@@ -19,9 +19,9 @@
     <textarea class='form-textarea' type="text" name="content" v-model="content"
       placeholder='content'></textarea>
     <input class='form-input' type="text" name="url" v-model="url" placeholder='url'>
-    <div v-for="tag in TAGS">
-       <input type="checkbox" :id="tag.value" :value="tag.value" v-model="hashTags">
-        <label for="scales">{{ tag.name }}</label>
+    <div v-for="(tag, key) in TAGS" :key="key">
+      <input type="checkbox" :id="tag.value" :value="tag.value" v-model="hashTags">
+        <label :for="tag.value">{{ tag.name }}</label>
     </div>
     <button name="submit" @click.prevent="handleSubmit">Запилить</button>
     <button type="button" name="cancel" @click="closeForm">Закрыть форму</button>
@@ -33,23 +33,21 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'formEl',
-  data() {
-    return {
-      image: null,
-      TAGS: [{
-        name: 'Web',
-        value: 'Web',
-      }, {
-        name: '3d',
-        value: '3d',
-      }, {
-        name: 'Smm',
-        value: 'Smm',
-      }],
-    };
-  },
+  data: () => ({
+    image: null,
+    TAGS: [{
+      name: 'Web',
+      value: 'Web',
+    }, {
+      name: '3d',
+      value: '3d',
+    }, {
+      name: 'Smm',
+      value: 'Smm',
+    }],
+  }),
   computed: {
-    ...mapGetters(['activeProject']),
+    ...mapGetters(['activeProject', 'openAdminForm']),
     title: {
       get() {
         return this.activeProject.title;
@@ -91,25 +89,18 @@ export default {
       },
     },
   },
-  props: {
-    formIsShown: Boolean,
-    formIsAdd: Boolean,
-  },
   methods: {
     handleUpload({ target: { files, }, }) {
     // eslint-disable-next-line prefer-destructuring
       this.image = files[0];
     },
     closeForm() {
-      if (this.formIsAdd) {
-        this.$store.commit('SET_NEW_PROJECT', this.activeProject);
-      } 
-
+      this.$store.commit('HANDLE_ADMIN_FORM', false);
       if (this.activeProject._id) {
         this.$store.commit('UNDO_PROJECT', this.activeProject._id);
+      } else {
+        this.$store.commit('SET_NEW_PROJECT', this.activeProject);
       }
-  
-      this.$emit('closeForm', { openForm: false, });
     },
     handleSubmit() {
       return this.activeProject._id ? this.editProject() : this.addProject();
@@ -124,19 +115,19 @@ export default {
           size, title, content, url, _id, hashTags,
         });
       
-      this.$emit('closeForm', { openForm: false, });
+      this.$store.commit('HANDLE_ADMIN_FORM', false);
     },
     addProject() {
       const {
         size, title, content, url, hashTags, 
       } = this.activeProject;
-      console.log('add propject');
+
       this.$store.dispatch('SAVE_PROJECT',
         {
           size, title, content, url, hashTags,
         });
 
-      this.$emit('closeForm', { openForm: false, });
+      this.$store.commit('HANDLE_ADMIN_FORM', false);
     },
   },
 };
@@ -147,14 +138,10 @@ export default {
   flex-direction: column;
   max-width: 550px;
   width: 100%;
-  margin: 10px 0 50px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
+  margin: 10px 0 30px;
   border: 1px solid #000;
-  z-index: 999;
-
+  z-index: 9999;
+  
   &-input {
     height: 20px;
     margin: 5px 0;
@@ -164,4 +151,5 @@ export default {
     height: 100px;
   }
 }
+
 </style>
