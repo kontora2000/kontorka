@@ -8,17 +8,14 @@
            &nbsp;content for&nbsp;social networks🔥
         </div>
         <div class="about-kontora">
-          Independent design bureau <br>based in&nbsp;Novorossiysk.
+          Independent design team <br>based in&nbsp;Novorossiysk.
           <div class="about-kontora-links">
-            © 2018 
-            <a class="about-kontora-link" id="vacancies" href="/vacancies"
-             style="display: none;">
-              Vacancies
-            </a>
-            <a class="about-kontora-link" id="partnership" href="/partnership"
-             style="display: none;">
-              Partnership
-            </a>
+            <span class="©-header">©</span>
+            <sup class="about-kontora-links-super">
+              2018 
+              <a class="about-kontora-link" id="vacancies" href="/vacancies">Vacancies</a>
+              <a class="about-kontora-link" id="partnership" href="/partnership">Partnership</a>
+            </sup>
           </div>
         </div>
       </article>
@@ -32,7 +29,7 @@
       </marquee>
       <marquee side="right">
         <div class="multiply multiply-right">
-          <a class="link-instagram marquee-link" href="https://instagram.com/prostokontora"><span>instagram</span></a>
+          <a class="link-instagram marquee-link" href="https://instagram.com/kontoragram"><span>@kontoragram</span></a>
         </div>
       </marquee>
       <marquee side="bottom">
@@ -58,17 +55,20 @@
       <projects />
       <mov-form />
     </main>
-     <!-- <footer>
-  
-          <a href="/requisites"><span>Реквизиты</span></a>
-          <a href="/partnership"><span>Сотрудничество</span></a>
-          <a href="/vacancies"><span>Вакансии</span></a>
-          <span class="©">
-              Контора
-              <span class="©-©">©</span>
-              <span class="©-year">2019</span>
-          </span>
-      </footer>-->
+    <footer>
+          <div class="©-block">
+              <span class="©-footer">©</span>
+              <sup class="©-super">
+                <span class="©-year">2018</span>
+                <a href="/requisites"><span>Requisites</span></a>
+                <a href="/partnership"><span>Partnership</span></a>
+                <a href="/vacancies"><span>Vacancies</span></a>
+              </sup>
+          </div>
+          <div class="logo-footer">
+            <a class="logo-footer-link" href="/">Kontora</a>
+          </div>
+    </footer>
   </div>
 </template>
 <script>
@@ -89,28 +89,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-html,
-body {
-  font-family: "Open Sans", sans-serif;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  color: #333;
-  letter-spacing: 1px;
-  background: #f5f5f5;
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-}
-main {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 1;
-}
-</style>

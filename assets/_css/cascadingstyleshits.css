@@ -1,25 +1,22 @@
 @font-face {
-	font-family: 'TT Travels';
-	src: url('/assets/_fonts/TTTravels-Regular.eot');
-	src: url('/assets/_fonts/TTTravels-Regular.eot?#iefix') format('embedded-opentype'),
-	url('/assets/_fonts/TTTravels-Regular.woff') format('woff'),
-	url('/assets/_fonts/TTTravels-Regular.ttf') format('truetype');
-	font-weight: 400;
+	font-family: 'Inter var';
+	font-weight: 100 900;
+	font-display: swap;
 	font-style: normal;
+	font-named-instance: 'Regular';
+	src: url("/assets/_fonts/Inter-upright.var.woff2") format("woff2");
 }
-
 @font-face {
-	font-family: 'TT Travels';
-	src:url('/assets/_fonts/TTTravels-Bold.eot');
-	src:url('/assets/_fonts/TTTravels-Bold.eot?#iefix') format('embedded-opentype'),
-		url('assets/_fonts/TTTravels-Bold.woff') format('woff'),
-		url('/assets/_fonts/TTTravels-Bold.ttf') format('truetype');
-	font-weight: 800;
-	font-style: normal;
+	font-family: 'Inter var';
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: italic;
+	font-named-instance: 'Italic';
+	src: url("/assets/_fonts/Inter-italic.var.woff2") format("woff2");
 }
 
 :root				{
-				--fontFamily: 'TT Travels', 'Helvetica', 'Arial', sans-serif;
+				--fontFamily: 'Inter var', 'Helvetica', 'Arial', sans-serif;
 
 				--BlackColor: #000;
 				--BlackColorHover: rgba(0, 0, 0, .8);
@@ -30,6 +27,15 @@
 				--WhiteColorHover: rgba(255, 255, 255, .8);
 				--WhiteBorderColor: rgba(255, 255, 255, .32);
 				--WhiteBorderColorHover: rgba(255, 255, 255, .8);
+
+				--BlueColor: #05f;
+				--BlueLinkBorder: rgba(0, 85, 255, .16);
+
+				--PurpleColor: #80f;
+				--PurpleLinkBorder: rgba(136, 0, 255, .16);
+				
+				--OrangeColor: #f50;
+				--OrangeLinkBorder: rgba(255, 85, 0, .16);
 }
 
 ::selection {
@@ -74,6 +80,10 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 2px;
 }
 */
+
+main {
+	position: relative;
+}
 
 a {
 	border-bottom: .5px solid var(--BlackBorderColor);
@@ -264,15 +274,27 @@ header {
 	}
 }
 
+.©-header {
+	font-size: 1.2rem;
+	font-weight: 200;
+}
+
 .about-kontora-links {
-	margin: 2rem 0 0;
+	margin: 4rem 0 0;
+}
+
+.about-kontora-links-super {
+	font-size: .625rem;
+	letter-spacing: .05em;
+	line-height: 1.65;
+	text-transform: uppercase;
 }
 
 .about-kontora-link {
 	color: var(--WhiteColor);
 	border-bottom: .5px solid var(--WhiteBorderColor);
 	display: inline-block;
-	margin: 0 1rem 0 0;
+	margin: 0 0 0 .25rem;
 }
 
 .about-kontora-link:hover {
@@ -375,10 +397,9 @@ header,
 }
 
 .marquee {
-	font-size: .85rem;
-	font-weight: 400;
-	letter-spacing: 2px;
-	text-transform: uppercase;
+	font-size: 1.25rem;
+	font-weight: 600;
+	letter-spacing: -.025em;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -467,9 +488,7 @@ header,
 }
 
 .link-hashtag:before {
-	background: transparent url('/assets/_img/icons/icon-hashtag.svg') 0 0 no-repeat;
-	background-size: contain;
-	content: '';
+	content: '#';
 	display: inline-block;
 	height: .85rem;
 	margin: 0 .25rem 0 0;
@@ -565,8 +584,6 @@ header,
 	z-index: 2011;
 }
 
-
-
 footer {
 	background-color: transparent !important;
 	margin: 9rem 0 8rem 4rem;
@@ -581,8 +598,16 @@ footer {
 	float: right;
 }
 
-.©-©,
-.©-year {
-	opacity: .32;
-	margin-left: 1rem;
+.©-footer {
+	font-size: 2rem;
+	font-weight: 200;
+	line-height: 1;
+}
+
+.©-super {
+	font-size: .75rem;
+	letter-spacing: .05em;
+	position: relative;
+	text-transform: uppercase;
+	top: -.45rem;
 }

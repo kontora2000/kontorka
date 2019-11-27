@@ -11,7 +11,7 @@
     "dev-build": "run-p build-static build-client",
     "start-static": "node dev-server.js",
     "openb": "google-chrome http://localhost:8000",
-    "dev": "run-p dev-build start-static build-server openb"
+    "dev": "run-p dev-build start-static build-server"
   },
   "repository": {
     "type": "git",

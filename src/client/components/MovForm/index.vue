@@ -62,7 +62,7 @@ export default {
       resizable: 'Resizable',
       warpable: 'Warpable',
     },
-    currentState: 'scalable',
+    currentState: 'resizable',
   }),
   methods: {
     handleClick({ target, }) {
@@ -118,8 +118,8 @@ export default {
   },
   mounted() {
     this.$frame = new Frame({
-      width: '302px',
-      height: '460px',
+      width: '30%',
+      height: 'auto',
       left: '50%',
       top: '7%',
       transform: {
@@ -134,27 +134,70 @@ export default {
   },
 };
 </script>
-<style lang="scss">
 
+<style lang="scss">
 .rCSus2bap {
   opacity: 0;
 }
 
 .moveable {
   position: absolute;
-  width: 326px;
-  height: 460px;
+  min-width: 30%;
+  height: auto;
   margin: 0 auto;
   top: 4%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
+  background: var(--BlackColor);
+  color: var(--WhiteColor);
+}
+
+.moveable textarea,
+.moveable input[type=text],
+.moveable input[type=url],
+.moveable input[type=mail],
+.moveable input[type=password],
+.moveable input[type=text] {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 1.5rem;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,.8);
+  cursor: text;
+  font-size: 1rem;
+  margin: .5rem .75rem;
+  min-height: 20px;
+  outline: none;
+  padding: .75rem;
+  transition: all .15s ease-in-out;
+}
+
+.moveable textarea:hover,
+.moveable input[type=text]:hover,
+.moveable input[type=url]:hover,
+.moveable input[type=mail]:hover,
+.moveable input[type=password]:hover,
+.moveable input[type=text]:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255,255,255,.2);
+  color: var(--WhiteColor);
+}
+
+.moveable textarea:focus,
+.moveable input[type=text]:focus,
+.moveable input[type=url]:focus,
+.moveable input[type=mail]:focus,
+.moveable input[type=password]:focus,
+.moveable input[type=text]:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255,255,255,.4);
+  color: var(--WhiteColor);
 }
 
 .buttons.able span {
   padding: 0;
   cursor: pointer;
 }
+
 .buttons {
   text-align: center;
   margin: 0;
