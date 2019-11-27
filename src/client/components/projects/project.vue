@@ -7,6 +7,8 @@
      <li v-if='project.isRemoveable' @click="handleDel(false)">Восстановить</li>
    </ul>
    <p class='project-title'>title: {{ project.title }}</p>
+
+   sadsdz!!!!!
   <p class='project-content' >
     content:
     <span class='project-content-body' v-html="project.content"></span>

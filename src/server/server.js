@@ -20,7 +20,8 @@ import initRoutes from './routes/index';
 // connect to DB
 dotenv.config();
 mongoose.connect(process.env.DB_URL, 
-  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, });
+  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, })
+  .catch((err) => console.log(err, 'err db'));
 
 // check if app runs in dev mode (with --dev parameter)
 let devBuild = false;
