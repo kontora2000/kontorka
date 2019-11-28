@@ -1,12 +1,10 @@
 <template>
- <div class='projects'> 
-    <div v-for="(project, key) in filteredProjects" :key="key" >
+  <div class='projects'> 
+    <div class='project-wrapper' v-for="(project, key) in filteredProjects" :key="key" >
       <project :project="project" />
     </div>
-    <img v-if="!openAdminForm" class="projects-add"
-     src='/assets/_img/button-plus.png'
-     alt="#" @click='handleProject' />
- </div>
+    <a v-if="!openAdminForm" class='projects-add' alt="#" @click='handleProject'>+</a>
+  </div>
 </template>
 <script>
 import { mapGetters } from 'vuex';
@@ -48,14 +46,27 @@ export default {
   grid-auto-flow: row dense;
   grid-column-gap: 10px;
   grid-row-gap: 10vh;
-  overflow-x: hidden;
   transition: background 1s ease;
 
 
   &-add {
-    max-width: 150px;
-    margin: 20px;
+    background-color: var(--BlueLinkBorder);
+    border-bottom: none;
+    border-radius: 8rem;
+    color: var(--BlueColor);
     cursor: pointer;
+    font-size: 10rem;
+    font-weight: 100;
+    line-height: .63;
+    text-align: center;
+    width: 8rem;
+    height: 8rem;
+    transition: all .15s ease-in-out;
+
+    &:hover {
+      background-color: var(--OrangeLinkBorder);
+      color: var(--OrangeColor);
+    }
   }
 }
 </style>

@@ -155,146 +155,147 @@ export default {
   &-textarea {
     height: 100px;
   }
-}
 
-.form-project-edit-sizepanel {
-  background: var(--BlueColor);
-  border: none;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  padding: 0;
-  width: 3rem;
-  writing-mode: vertical-lr;
-}
+  &-project-edit-sizepanel {
+    background: var(--BlueColor);
+    border: none;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 0;
+    width: 3rem;
+    writing-mode: vertical-lr;
 
-.form-project-edit-sizepanel-label {
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 .5rem;
-  transform: rotate(-180deg);
-}
+    &-label {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 .5rem;
+      transform: rotate(-180deg);
 
-.form-project-edit-sizepanel-label-span {
-  border-radius: 100px;
-  padding: .875rem .4rem;
-}
+      &-span {
+        border-radius: 100px;
+        padding: .875rem .4rem;
+      }
+    }
+  }
 
-.form-project-edit-input-radio {
-  display: none;
-}
+  &-project-edit-input-radio {
+    display: none;
 
-.form-project-edit-input-radio:checked ~ .form-project-edit-sizepanel-label-span {
-  background: var(--WhiteColor);
-  color: var(--BlueColor);
-}
+    &:checked ~ .form-project-edit-sizepanel-label-span {
+      background: var(--WhiteColor);
+      color: var(--BlueColor);
+    }
+  }
 
-.form-project-edit-fields {
-  display: grid;
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
+  &-project-edit-fields {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
 
-.form-project-edit-header {
-  grid-column: 1/4;
-  grid-row: 1/2;
-  width: 100%;
-}
+  &-project-edit-header {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 100%;
+  }
 
-.form-project-edit-title {
-  width: 74%;
-}
+  &-project-edit-title {
+    width: 74%;
+  }
 
-.form-project-edit-link-close {
-  color: rgba(255,255,255,.8);
-  border-bottom: none;
-  display: inline-block;
-  float: right;
-  font-size: 2rem;
-  margin-right: 1.5rem;
-  position: relative;
-  text-decoration: none;
-  top: 1.15rem;
-}
+  &-project-edit-link-close {
+    color: rgba(255,255,255,.72);
+    border-bottom: none;
+    display: inline-block;
+    float: right;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    position: relative;
+    text-decoration: none;
+    top: 1.15rem;
 
-.form-project-edit-link-close:hover {
-  color: var(--WhiteColor);
-}
+    &:hover {
+      color: var(--WhiteColor);
+    }
+  }
 
-.form-project-edit-code {
-  font-family: 'PT Mono', monospace;
-  grid-column: 1/4;
-  grid-row: 2/3;
-}
+  &-project-edit-code {
+    font-family: 'PT Mono', monospace;
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
 
-.form-project-edit-url {
-  grid-column: 1/3;
-  grid-row: 3/4;
-}
+  &-project-edit-url {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
 
-.form-project-edit-tags {
-  grid-column: 1/3;
-  grid-row: 4/6;
-  margin: .375rem .75rem .5rem;
-}
+  &-project-edit-tags {
+    grid-column: 1/3;
+    grid-row: 4/6;
+    margin: .375rem .75rem .5rem;
+  }
 
-.form-project-edit-tag {
-  display: inline-block;
-  margin: .125rem .25rem;
-}
-.form-project-edit-tag:first-child {
-  margin-left: 0;
-}
-.form-project-edit-tag:last-child {
-  margin-right: 0;
-}
+  &-project-edit-tag {
+    display: inline-block;
+    margin: .125rem .25rem;
 
-.form-project-edit-checkbox {
-  display: none;
-}
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
-.form-project-edit-tags-label {
-  cursor: pointer;
-  background: transparent;
-  border: 1px solid var(--BlueColor);
-  border-radius: 100px;
-  color: var(--BlueColor);
-  display: inline-block;
-  padding: .5rem .875rem;
-  transition: all .15s ease-in-out;
-}
+  &-project-edit-checkbox {
+    display: none;
 
-.form-project-edit-tags-label:hover {
-  background: rgba(0,85,255,.32);
-}
+    &:checked ~ .form-project-edit-tags-label {
+      background: var(--BlueColor);
+      color: var(--WhiteColor);
+    }
 
-.form-project-edit-checkbox:checked ~ .form-project-edit-tags-label {
-  background: var(--BlueColor);
-  color: var(--WhiteColor);
-}
+    &:checked ~ .form-project-edit-tags-label > .form-project-edit-tags-label-span:before {
+      content: '╳';
+    }
+  }
 
-.form-project-edit-tags-label-span:before {
-  content: '#';
-  display: inline-block;
-  margin-right: .2rem;
-}
+  &-project-edit-tags-label {
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--BlueColor);
+    border-radius: 100px;
+    color: var(--BlueColor);
+    display: inline-block;
+    padding: .5rem .875rem;
+    transition: all .15s ease-in-out;
 
-.form-project-edit-checkbox:checked ~ .form-project-edit-tags-label > .form-project-edit-tags-label-span:before {
-  content: '╳';
-}
+    &:hover {
+      background: rgba(0,85,255,.32);
+    }
 
-.form-project-edit-button-post {
-  background: radial-gradient(100% 100% at 100% 0%, #00AFFF 0%, #0055FF 100%);
-  border-radius: 1000px;
-  border: none;
-  color: var(--WhiteColor);
-  cursor: pointer;
-  grid-column: 3/4;
-  grid-row: 3/6;
-  font-size: 1.25rem;
-  height: 8rem;
-  margin: .5rem 0;
-  line-height: 1;
-  padding: 0;
-  width: 8rem;
+    &-span:before {
+      content: '#';
+      display: inline-block;
+      margin-right: .2rem;
+    }
+  }
+
+  &-project-edit-button-post {
+    background: radial-gradient(100% 100% at 100% 0%, #00AFFF 0%, #0055FF 100%);
+    border-radius: 1000px;
+    border: none;
+    color: var(--WhiteColor);
+    cursor: pointer;
+    grid-column: 3/4;
+    grid-row: 3/6;
+    font-size: 1.25rem;
+    height: 8rem;
+    margin: .5rem 0;
+    line-height: 1;
+    padding: 0;
+    width: 8rem;
+  }
 }
 </style>

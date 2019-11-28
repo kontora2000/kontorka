@@ -408,10 +408,6 @@ header,
 	width: calc(100vw - 2rem);
 }
 
-.marquee .link-phone span {
-	letter-spacing: .5px;
-}
-
 .marquee.top {
 	left: 1.75rem;
 	padding-top: .25rem;

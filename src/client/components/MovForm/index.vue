@@ -150,52 +150,45 @@ export default {
   transform: translate(-50%, -50%);
   background: var(--BlackColor);
   color: var(--WhiteColor);
-}
 
-.moveable textarea,
-.moveable input[type=text],
-.moveable input[type=url],
-.moveable input[type=mail],
-.moveable input[type=password],
-.moveable input[type=text] {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 1.5rem;
-  border: 1px solid transparent;
-  color: rgba(255,255,255,.8);
-  cursor: text;
-  font-size: 1rem;
-  margin: .5rem .75rem;
-  min-height: 20px;
-  outline: none;
-  padding: .75rem;
-  transition: all .15s ease-in-out;
-}
-
-.moveable textarea:hover,
-.moveable input[type=text]:hover,
-.moveable input[type=url]:hover,
-.moveable input[type=mail]:hover,
-.moveable input[type=password]:hover,
-.moveable input[type=text]:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255,255,255,.2);
-  color: var(--WhiteColor);
-}
-
-.moveable textarea:focus,
-.moveable input[type=text]:focus,
-.moveable input[type=url]:focus,
-.moveable input[type=mail]:focus,
-.moveable input[type=password]:focus,
-.moveable input[type=text]:focus {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255,255,255,.4);
-  color: var(--WhiteColor);
-}
-
-.buttons.able span {
-  padding: 0;
-  cursor: pointer;
+  & textarea,
+  & input[type=text],
+  & input[type=url],
+  & input[type=mail],
+  & input[type=password],
+  & input[type=text] {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 1.5rem;
+    border: 1px solid transparent;
+    color: rgba(255,255,255,.8);
+    cursor: text;
+    font-size: 1rem;
+    margin: .5rem .75rem;
+    min-height: 20px;
+    outline: none;
+    padding: .75rem;
+    transition: all .15s ease-in-out;
+  }
+  & textarea:hover,
+  & input[type=text]:hover,
+  & input[type=url]:hover,
+  & input[type=mail]:hover,
+  & input[type=password]:hover,
+  & input[type=text]:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255,255,255,.2);
+    color: var(--WhiteColor);
+  }
+  & textarea:focus,
+  & input[type=text]:focus,
+  & input[type=url]:focus,
+  & input[type=mail]:focus,
+  & input[type=password]:focus,
+  & input[type=text]:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255,255,255,.4);
+    color: var(--WhiteColor);
+  }
 }
 
 .buttons {
@@ -205,16 +198,21 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-}
 
-.buttons img {
-  position: relative;
-  height: 80px;
-  margin: 0;
-}
+  &.able span {
+    padding: 0;
+    cursor: pointer;
+  }
 
-.buttons span:hover,
-.buttons span.selected {
-  color: red;
+  & img {
+    position: relative;
+    height: 80px;
+    margin: 0;
+  }
+
+  & span:hover,
+  & span.selected {
+    color: red;
+  }
 }
 </style>
