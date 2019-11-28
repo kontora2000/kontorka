@@ -6,6 +6,7 @@
         <div class="we-do">
           We design identities&thinsp;/&thinsp;websites&thinsp;/&thinsp;apps&thinsp;/&thinsp;ad
            &nbsp;content for&nbsp;social networks🔥
+          <a class="button-request-des" href="#">let's rock</a>
         </div>
         <div class="about-kontora">
           Independent design team <br>based in&nbsp;Novorossiysk.

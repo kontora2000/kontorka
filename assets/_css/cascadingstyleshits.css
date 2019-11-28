@@ -239,6 +239,21 @@ header {
 	}
 }
 
+.button-request-des {
+	border: 1px solid var(--WhiteBorderColor);
+	border-radius: 100px;
+	color: var(--WhiteColor);
+	font-size: 1.75rem;
+	padding: .5rem 1.5rem;
+	top: -.5rem;
+	position: relative;
+}
+
+.button-request-des:hover {
+	border-color: var(--WhiteBorderColorHover) !important;
+	
+}
+
 .about-kontora {
 	color: var(--WhiteColor);
 	grid-column: 4/5;
