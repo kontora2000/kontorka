@@ -191,8 +191,10 @@ header {
 	grid-column: 1/4;
 	grid-row: 3/5;
 	font-size: 3.25rem;
-	line-height: 3.75rem;
+	letter-spacing: -.02em;
+	line-height: 4.375rem;
 	margin: -5rem 1rem 0 4rem;
+	max-width: 780px;
 	mix-blend-mode: difference;
 	z-index: 1;
 }
@@ -597,16 +599,17 @@ header,
 
 footer {
 	background-color: transparent !important;
-	margin: 9rem 0 8rem 4rem;
-	width: calc(100% - 8rem);
+	margin: 9rem 0 6rem 3rem;
+	width: calc(100% - 6rem);
 }
 
 .footer-link {
 	margin-right: 2rem;
 }
 
-.© {
-	float: right;
+.©-block {
+	display: inline-block;
+	vertical-align: top;
 }
 
 .©-footer {
@@ -621,4 +624,20 @@ footer {
 	position: relative;
 	text-transform: uppercase;
 	top: -.45rem;
+}
+
+.logo-footer {
+	display: inline-block;
+	float: right;
+}
+
+.logo-footer-link {
+	display: block;
+	border: 3px solid;
+	float: right;
+	font-size: 1.25rem;
+	font-weight: 650;
+	letter-spacing: .05em;
+	padding: 1px .175rem 0 .35rem;
+	text-transform: uppercase;
 }

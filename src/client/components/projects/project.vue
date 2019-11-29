@@ -73,6 +73,7 @@ export default {
     &-ul {
       list-style-type: none;
       margin: 0;
+      mix-blend-mode: difference;
       padding: 0;
       position: absolute;
       left: 6.75rem;
@@ -86,7 +87,6 @@ export default {
         line-height: 1.5rem;
         margin: .5rem 0;
         padding: .25rem 0;
-        mix-blend-mode: difference;
         transition: all .15s ease-in-out;
 
         &:first-child {
@@ -107,6 +107,8 @@ export default {
     width: calc(100% + 1rem);
 
     &-body {
+      min-height: 320px;
+
       & /deep/ img {
         object-fit: cover;
         max-width: 100%;
@@ -115,6 +117,7 @@ export default {
   }
   &-about {
     font-size: 1.125rem;
+    margin-top: .5rem;
 
     &-title,
     &-url {

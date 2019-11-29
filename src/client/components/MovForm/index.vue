@@ -150,6 +150,7 @@ export default {
   transform: translate(-50%, -50%);
   background: var(--BlackColor);
   color: var(--WhiteColor);
+  z-index: 1000;
 
   & textarea,
   & input[type=text],
