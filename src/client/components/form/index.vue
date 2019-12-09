@@ -14,11 +14,12 @@
         <input type="radio" value="large" name="size" v-model="size">
       </label>
     </fieldset>
-    <input class='form-input' type="text" name="title" v-model="title" placeholder='title'>
+    <input class='form-input' type="text" name="title" v-model="title" placeholder='title' @mousedown="handleDown" @mouseup="handleUp" >
     <!--<input type="file" name="image" @change="handleUpload" > -->
     <textarea class='form-textarea' type="text" name="content" v-model="content"
-      placeholder='content'></textarea>
-    <input class='form-input' type="text" name="url" v-model="url" placeholder='url'>
+    placeholder='content' @mousedown="handleDown" @mouseup="handleUp" ></textarea>
+    <input class='form-input' type="text" name="url" v-model="url" placeholder='url'
+     @mousedown="handleDown" @mouseup="handleUp" >
     <div v-for="(tag, key) in TAGS" :key="key">
       <input type="checkbox" :id="tag.value" :value="tag.value" v-model="hashTags">
         <label :for="tag.value">{{ tag.name }}</label>
@@ -90,6 +91,14 @@ export default {
     },
   },
   methods: {
+    handleUp() {
+      console.log('Up');
+      this.$emit('DragResizeValue', true);
+    },
+    handleDown() {
+      console.log('Down');
+      this.$emit('DragResizeValue', false);
+    },
     handleUpload({ target: { files, }, }) {
     // eslint-disable-next-line prefer-destructuring
       this.image = files[0];
@@ -136,11 +145,11 @@ export default {
 .form {
   display: flex;
   flex-direction: column;
-  max-width: 550px;
   width: 100%;
   margin: 10px 0 30px;
   border: 1px solid #000;
   z-index: 9999;
+  background: #fff;
   
   &-input {
     height: 20px;
