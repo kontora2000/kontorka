@@ -7,5 +7,15 @@ const ProjectSchema = new Schema({
   content: String,
   size: String,
   url: String,
+  path: String,
+  isRemoveable: {
+    type: Boolean,
+    default: false,
+  },
+  hashTags: [{
+    type: String,
+  }],
+}, {
+  timestamps: true,
 });
 module.exports = mongoose.model('project', ProjectSchema);

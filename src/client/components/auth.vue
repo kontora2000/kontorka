@@ -1,29 +1,36 @@
 <template>
-    <form method="post" enctype="multipart/form-data">
-        <input type="text" name="username" v-model="username" >
-        <input type="password" name="password" v-model="password">
-        <button name="submit" @click.prevent="tryAuth">Отправить</button>
+    <form method="post">
+      <input type="text" name="username" v-model="username" >
+      <input type="password" name="password" v-model="password">
+      <button name="submit" @click.prevent="tryAuth">Отправить</button>
     </form>
 </template>
 <script>
-import {mapGetters} from 'vuex';
+// import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
-  data: function () {
+  data() {
     return {
-      username : '',
-      password : '',
-      token: '',
-    }
+      username: '',
+      password: '',
+    };
   },
-  computed : {
-  ...mapGetters(['USER']),
+  computed: {
+    ...mapState(['user']),
   },
   methods: {
-    tryAuth: function () {
-      const { username, password, token } = this;
-      this.$store.dispatch('SAVE_USER', { username, password });
-    }
-  }
-}
+    tryAuth() {
+      const { username, password, } = this;
+      this.$store.dispatch('SAVE_USER', { username, password, });
+    },
+  },
+  watch: {
+    user() {
+      if (this.user.token) {
+        window.location.href = '/';
+      }
+    },
+  },
+};
 </script>
