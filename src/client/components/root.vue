@@ -56,7 +56,7 @@
     </header>
     <main>
       <projects />
-      <mov-form />
+      <drag-form />
     </main>
      <!-- <footer>
   
@@ -74,7 +74,7 @@
 <script>
 // eslint-disable-next-line import/no-unresolved
 import projects from './projects';
-import MovForm from './MovForm/index.vue';
+import DragForm from './DragForm/index.vue';
 import marquee from './marquee.vue'; // marques animated by greensock
 import flag from './flag.vue';
 // template wrapper for three.js flag renderer
@@ -82,7 +82,7 @@ import flag from './flag.vue';
 export default {
   name: 'root',
   components: {
-    MovForm,
+    DragForm,
     projects,
     marquee,
     flag,
