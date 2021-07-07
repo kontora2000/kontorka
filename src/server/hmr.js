@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import webpackConfig from '../../webpack/webpack.dev.config';
+import webpackConfig from '../../webpack.dev.config';
 
 function initWebpackHMR(app) { 
   const compiler = webpack(webpackConfig);
@@ -12,6 +12,7 @@ function initWebpackHMR(app) {
     logLevel: 'warn', 
     publicPath: webpackConfig.output.publicPath,
   }));
+  // eslint-disable-next-line no-console
   app.use(webpackHotMiddleware(compiler, { log: console.log, }));
 }
 export default {

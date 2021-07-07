@@ -1,61 +1,83 @@
-const express = require('express');
+import express from 'express';
+// import multer from 'multer';
+
+// eslint-disable-next-line no-unused-vars
+import isAuthenticated from '../controllers/auth';
+import Project from '../models/project';
 
 const router = express.Router();
 
-const Project = require('../models/project');
-const isAuthenticated = require('../controllers/auth');
+// const storage = multer.diskStorage({
+//   destination(req, file, cb) {
+//     cb(null, './uploads/');
+//   },
+//   filename(req, file, cb) {
+//     let filename = '';
+//     switch (file.mimetype) {
+//     case 'image/png':
+//       filename = `${file.fieldname}-${Date.now()}.png`;
+//       break;
+//     case 'image/jpeg':
+//       filename += '.jpeg';
+//       filename = `${file.fieldname}-${Date.now()}.jpeg`;
+//       break;
+//     default:
+//       break;
+//     }
 
-router.get('/', isAuthenticated, (req, res) => {
+//     cb(null, filename);
+//   },
+// });
+
+
+// const upload = multer({ storage, });
+
+router.get('/', async (req, res) => {
+  try {
+    await Project.deleteMany({ isRemoveable: true, });
+  } catch (e) {
+    console.log(e);
+  }
+  
   Project.find({}, (err, projects) => {
-    const projectsMap = {};
-
-    projects.forEach((project) => {
-      projectsMap[project._id] = project;
-    });
-    res.status(200).json({ projects: projectsMap, });  
+    res.status(200).json({ projects, });  
   });
 });
 
-router.post('/', isAuthenticated, (req, res) => {
-  const newProject = new Project();
-  // set the user's local credentials
-  newProject.title = req.body.title;
-  newProject.content = req.body.content;
-  newProject.url = req.body.url;
-  newProject.size = req.body.size;
-  
+router.post('/', /* isAuthenticated , */ (req, res) => {
+  const newProject = new Project(req.body);   
   // save the user
   newProject.save((err) => {
-    if (err) {
-      console.log(`Error in Saving project: ${err}`);  
+    if (err) { 
       throw err;  
     }
-    console.log('project succesful created');    
     res.status(201).json({ project: newProject, });
   });
 });
 
-router.put('/:id', isAuthenticated, (req, res) => {
+router.put('/:id', /* isAuthenticated , */ (req, res) => {
   Project.findByIdAndUpdate(
     req.params.id,
     req.body,
     { new: true, },
-    (err, newProject) => {
-      console.log('project succesful updated'); 
-      return res.status(200).json({ project: newProject, });
-    }
+    (err, newProject) => res.status(200).json({ project: newProject, })
   );
 });
 
-router.delete('/:id', isAuthenticated, (req, res) => {
-  console.log('del method');
+router.patch('/:id', /* isAuthenticated , */ (req, res) => {
+  Project.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true, },
+    (err, newProject) => res.status(200).json({ project: newProject, })
+  );
+});
+
+router.delete('/:id', /* isAuthenticated , */ (req, res) => {
   Project.findByIdAndRemove(
     req.params.id,
-    (err, delProject) => {
-      console.log('project succesful deleted'); 
-      return res.status(200).json({ project: delProject, });
-    }
+    (err, delProject) => res.status(200).json({ project: delProject, })
   );
 });
 
-module.exports = router;
+export default router;

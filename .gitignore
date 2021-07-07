@@ -1,9 +1,9 @@
 node_modules
-assets/_fonts
-assets/_img
+uploads
 views/projects
 robots.txt
 v8-compile-cache-0
 build
 .git
 .env
+.vscode

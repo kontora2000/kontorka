@@ -1,5 +1,5 @@
-// import path from 'path';
 import express from 'express';
+
 import cors from 'cors';
 import dotenv from 'dotenv';
 // server
@@ -20,7 +20,8 @@ import initRoutes from './routes/index';
 // connect to DB
 dotenv.config();
 mongoose.connect(process.env.DB_URL, 
-  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, });
+  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, })
+  .catch((err) => console.log(err, 'err db'));
 
 // check if app runs in dev mode (with --dev parameter)
 let devBuild = false;
@@ -41,15 +42,17 @@ app.use(session({ secret: 'kontoraSecretKey', resave: false, saveUninitialized: 
 app.use(passport.initialize());
 app.use(passport.session());
 initPassport(passport);
-
+ 
 const routes = initRoutes(passport);
 
 app.use('/', routes);
 
+  
 // listening port
 const http = require('http');
 
 const server = http.createServer(app);
 server.listen(2002, () => {
+  // eslint-disable-next-line no-console
   if (devBuild) { console.log('Backend started at 2002 at development mode!!!!'); }
 }); 
